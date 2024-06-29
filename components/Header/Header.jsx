@@ -9,25 +9,25 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link href="/">Головна</Link>
+            <Link href="/">Главная</Link>
           </li>
           <li>
-            <Link href="/services">Послуги</Link>
+            <Link href="/services">Услуги</Link>
           </li>
           <li>
-            <Link href="/prices">Ціни</Link>
+            <Link href="/prices">Цены</Link>
           </li>
           <li>
-            <Link href="/promotions">Акції</Link>
+            <Link href="/promotions">Акции</Link>
           </li>
           <li>
-            <Link href="/articles">Статті</Link>
+            <Link href="/articles">Статьи</Link>
           </li>
           <li>
-            <Link href="/about">Про нас</Link>
+            <Link href="/about">О нас</Link>
           </li>
           <li>
-            <Link href="/contacts">Контакти</Link>
+            <Link href="/contacts">Контакты</Link>
           </li>
         </ul>
       </nav>
