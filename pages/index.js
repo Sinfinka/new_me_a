@@ -1,7 +1,12 @@
 import Head from "next/head";
-import Header from "../components/Header/Header";
+import Button from "../components/Button/Button";
+import css from "./HomePage.module.css";
 
 export default function Home() {
+  const handleButtonClick = () => {
+    console.log("Button clicked!");
+  };
+
   return (
     <div>
       <Head>
@@ -51,7 +56,9 @@ export default function Home() {
           content="https://yourwebsite.com/twitter-image.jpg" // ЗМІНИТИ
         />
       </Head>
+
       <h1>Главная</h1>
+      <Button text="Позвоните мне" onClick={handleButtonClick} />
     </div>
   );
 }

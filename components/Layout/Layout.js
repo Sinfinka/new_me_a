@@ -1,10 +1,12 @@
-import Header from "./Header/Header.jsx";
+import Footer from "../Footer/Footer.jsx";
+import Header from "../Header/Header.jsx";
 
 const Layout = ({ children }) => {
   return (
-    <div className="content">
+    <div>
       <Header />
       {children}
+      <Footer />
     </div>
   );
 };
