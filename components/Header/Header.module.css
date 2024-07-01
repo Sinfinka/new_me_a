@@ -22,3 +22,15 @@
 .navLink {
   padding: 0 15px 15px 15px;
 }
+
+.tel {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon {
+  fill: aqua;
+  stroke: aquamarine;
+}

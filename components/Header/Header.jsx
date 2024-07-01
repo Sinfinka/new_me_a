@@ -3,6 +3,8 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import css from "./Header.module.css";
 import con from "../../styles/container.module.css";
+import Icon from "../../components/icons";
+
 // import CallbackModal from "../CallbackModal/CallbackModal";
 
 function Header() {
@@ -12,18 +14,22 @@ function Header() {
         <p>мы обеспечим вам лучший сервис</p>
       </div>
       <div className={con.container}>
-        <Logo />
-        <address>
-          <a href="tel:+905303069524">+905303069524</a>
-        </address>
-        <button
-          type="button"
-          className="btn btn-primary" // !!!
-          data-toggle="modal"
-          data-target="#callbackModal"
-        >
-          Обратный звонок
-        </button>
+        <Icon id="icon-logo" />
+
+        <div className={css.tel}>
+          <address>
+            <a href="tel:+905303069524">+905303069524</a>
+          </address>
+          <button
+            type="button"
+            className="btn btn-primary" // !!!
+            data-toggle="modal"
+            data-target="#callbackModal"
+          >
+            Обратный звонок
+          </button>
+          <p>ПН-ПТ: 10-19</p>
+        </div>
         <nav>
           <ul className={css.navigation}>
             <li>

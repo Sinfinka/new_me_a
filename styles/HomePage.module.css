@@ -1,0 +1,20 @@
+.hero {
+  background: var(--lineal-gradient);
+  padding-top: 40px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  font-family: Roboto;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 113px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.headerSmall {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 75px;
+}
