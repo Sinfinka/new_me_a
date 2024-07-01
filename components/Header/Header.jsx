@@ -1,36 +1,76 @@
 import Link from "next/link";
 import React from "react";
 import Logo from "../Logo/Logo";
+import css from "./Header.module.css";
+import con from "../../styles/container.module.css";
+import Icon from "../../components/icons";
+
+// import CallbackModal from "../CallbackModal/CallbackModal";
 
 function Header() {
   return (
-    <header>
-      <Logo />
-      <nav>
-        <ul>
-          <li>
-            <Link href="/">Главная</Link>
-          </li>
-          <li>
-            <Link href="/services">Услуги</Link>
-          </li>
-          <li>
-            <Link href="/prices">Цены</Link>
-          </li>
-          <li>
-            <Link href="/promotions">Акции</Link>
-          </li>
-          <li>
-            <Link href="/articles">Статьи</Link>
-          </li>
-          <li>
-            <Link href="/about">О нас</Link>
-          </li>
-          <li>
-            <Link href="/contacts">Контакты</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className={css.header}>
+      <div className={css.topBar}>
+        <p>мы обеспечим вам лучший сервис</p>
+      </div>
+      <div className={con.container}>
+        <Icon id="icon-logo" />
+
+        <div className={css.tel}>
+          <address>
+            <a href="tel:+905303069524">+905303069524</a>
+          </address>
+          <button
+            type="button"
+            className="btn btn-primary" // !!!
+            data-toggle="modal"
+            data-target="#callbackModal"
+          >
+            Обратный звонок
+          </button>
+          <p>ПН-ПТ: 10-19</p>
+        </div>
+        <nav>
+          <ul className={css.navigation}>
+            <li>
+              <Link className={css.navLink} href="/">
+                Главная
+              </Link>
+            </li>
+            <li>
+              <Link className={css.navLink} href="/services">
+                Услуги
+              </Link>
+            </li>
+            <li>
+              <Link className={css.navLink} href="/prices">
+                Цены
+              </Link>
+            </li>
+            <li>
+              <Link className={css.navLink} href="/promotions">
+                Акции
+              </Link>
+            </li>
+            <li>
+              <Link className={css.navLink} href="/articles">
+                Статьи
+              </Link>
+            </li>
+            <li>
+              <Link className={css.navLink} href="/about">
+                О нас
+              </Link>
+            </li>
+            <li>
+              <Link className={css.navLink} href="/contacts">
+                Контакты
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      {/* <CallbackModal /> */}
     </header>
   );
 }

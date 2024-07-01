@@ -1,9 +1,15 @@
 import Head from "next/head";
-import Header from "../components/Header/Header";
+import Button from "../components/Button/Button";
+import css from "../styles/HomePage.module.css";
+import con from "../styles/container.module.css";
 
 export default function Home() {
+  const handleButtonClick = () => {
+    console.log("Button clicked!");
+  };
+
   return (
-    <div>
+    <div className={css.hero}>
       <Head>
         <title>Медицинская клиника New Me | Главная страница</title>
         <meta
@@ -51,7 +57,14 @@ export default function Home() {
           content="https://yourwebsite.com/twitter-image.jpg" // ЗМІНИТИ
         />
       </Head>
-      <h1>Главная</h1>
+      <div className={con.container}>
+        <h1 className={css.header}>
+          <span className={css.headerBig}> Ваше здоровье</span>{" "}
+          <span className={css.headerSmall}> в надежных руках</span>
+        </h1>
+
+        <Button text="Позвоните мне" onClick={handleButtonClick} />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.footer {
+  background-color: rgb(233, 233, 233);
+  align-items: baseline;
+  text-align: center;
+  margin-top: auto;
+  height: 3rem;
+}
+
+.text {
+  background-color: rgb(113, 184, 255);
+  letter-spacing: 0.8px;
+  padding: 1em;
+}
+
+.rotatingIcon {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.linkToGit {
+  text-decoration: underline;
+}
