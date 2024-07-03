@@ -5,18 +5,22 @@
 
 @media (min-width: 375px) {
   .container {
-    width: 375px;
+    width: 320px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
     width: 768px;
+    padding-left: 49px;
+    padding-right: 49px;
   }
 }
 
 @media (min-width: 1440px) {
   .container {
     width: 1440px;
+    /* padding-left: 49px;
+    padding-right: 49px; */
   }
 }

@@ -1,0 +1,19 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navLink {
+  font-family: Clear Sans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 113.71%;
+  color: var(--secondary-color);
+  padding: 0 15px 15px 15px;
+  white-space: nowrap;
+}
+
+.active {
+  color: var(--accent-color);
+}
