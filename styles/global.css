@@ -8,11 +8,12 @@
   --primary-color: #3636a2;
   --secondary-color: #6c757d;
   --accent-color: #f3761b;
-  --accent-hover-color: #ff852e;
+  --accent-hover-color: #fc9b56;
   --text-color: #ffffff;
   --text-color-black: #000000;
   --background-color: #ececec;
   --box-shadow: #592a0145;
+  --text-blue: rgb(30, 116, 130);
   --lineal-gradient: linear-gradient(
     to left,
     rgb(51, 197, 225),

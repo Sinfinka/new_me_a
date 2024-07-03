@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Button from "../components/Button/Button";
-import css from "../styles/HomePage.module.css";
+import css from "./HomePage.module.css";
 import con from "../styles/container.module.css";
+import Image from "next/image";
 
 export default function Home() {
   const handleButtonClick = () => {
@@ -9,7 +10,7 @@ export default function Home() {
   };
 
   return (
-    <div className={css.hero}>
+    <section className={css.hero}>
       <Head>
         <title>Медицинская клиника New Me | Главная страница</title>
         <meta
@@ -57,14 +58,27 @@ export default function Home() {
           content="https://yourwebsite.com/twitter-image.jpg" // ЗМІНИТИ
         />
       </Head>
-      <div className={con.container}>
-        <h1 className={css.header}>
-          <span className={css.headerBig}> Ваше здоровье</span>{" "}
-          <span className={css.headerSmall}> в надежных руках</span>
-        </h1>
-
-        <Button text="Позвоните мне" onClick={handleButtonClick} />
+      <div className={`${con.container} ${css.wrapper}`}>
+        <div className={css.content}>
+          <h1 className={css.header}>
+            <span className={css.headerBig}>Ваше здоровье</span>{" "}
+            <span className={css.headerSmall}>в надежных руках</span>
+          </h1>
+          <Button
+            text="Позвоните мне"
+            onClick={handleButtonClick}
+            className={css.button}
+          />
+        </div>
+        <div className={css.imageContainer}>
+          <Image
+            src="/DrManiHabibi.png"
+            alt="Dr Mani Habibi"
+            width={797}
+            height={516}
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

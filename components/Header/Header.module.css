@@ -12,25 +12,24 @@
   padding-bottom: 8px;
   width: 100vw;
 }
-
-.navigation {
+.wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
-
-.navLink {
-  padding: 0 15px 15px 15px;
+.logo {
+  padding: 5px 50px 5px 5px;
 }
 
-.tel {
-  display: flex;
-
-  flex-direction: row;
-  justify-content: space-between;
+.tools {
+  display: none;
 }
 
-.icon {
-  fill: aqua;
-  stroke: aquamarine;
+@media (min-width: 1440px) {
+  .tools {
+    display: block;
+    padding-top: 18px;
+  }
+  .burger {
+    display: none;
+  }
 }

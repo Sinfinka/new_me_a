@@ -1,9 +1,11 @@
-import Link from "next/link";
 import React from "react";
-import Logo from "../Logo/Logo";
 import css from "./Header.module.css";
+
 import con from "../../styles/container.module.css";
 import Icon from "../../components/icons";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { NavBar } from "../NavBar/NavBar";
+import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
 
 // import CallbackModal from "../CallbackModal/CallbackModal";
 
@@ -13,62 +15,13 @@ function Header() {
       <div className={css.topBar}>
         <p>мы обеспечим вам лучший сервис</p>
       </div>
-      <div className={con.container}>
-        <Icon id="icon-logo" />
-
-        <div className={css.tel}>
-          <address>
-            <a href="tel:+905303069524">+905303069524</a>
-          </address>
-          <button
-            type="button"
-            className="btn btn-primary" // !!!
-            data-toggle="modal"
-            data-target="#callbackModal"
-          >
-            Обратный звонок
-          </button>
-          <p>ПН-ПТ: 10-19</p>
+      <div className={`${css.wrapper} ${con.container}`}>
+        <Icon className={css.logo} id="icon-logo" width="227" height="115" />
+        <div className={css.tools}>
+          <CallMeBlock />
+          <NavBar />
+          <GiHamburgerMenu className={css.burger} />
         </div>
-        <nav>
-          <ul className={css.navigation}>
-            <li>
-              <Link className={css.navLink} href="/">
-                Главная
-              </Link>
-            </li>
-            <li>
-              <Link className={css.navLink} href="/services">
-                Услуги
-              </Link>
-            </li>
-            <li>
-              <Link className={css.navLink} href="/prices">
-                Цены
-              </Link>
-            </li>
-            <li>
-              <Link className={css.navLink} href="/promotions">
-                Акции
-              </Link>
-            </li>
-            <li>
-              <Link className={css.navLink} href="/articles">
-                Статьи
-              </Link>
-            </li>
-            <li>
-              <Link className={css.navLink} href="/about">
-                О нас
-              </Link>
-            </li>
-            <li>
-              <Link className={css.navLink} href="/contacts">
-                Контакты
-              </Link>
-            </li>
-          </ul>
-        </nav>
       </div>
       {/* <CallbackModal /> */}
     </header>

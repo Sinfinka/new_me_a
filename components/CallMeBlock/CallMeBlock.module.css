@@ -1,0 +1,35 @@
+.callMe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(136, 132, 132);
+  margin-bottom: 21px;
+}
+
+.telLink {
+  color: var(--text-blue);
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+.btn {
+  font-family: Clear Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 113.71%;
+  border: none;
+  background: none;
+  padding: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed black;
+}
+
+.workTime {
+  font-family: Clear Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 113.71%;
+}
