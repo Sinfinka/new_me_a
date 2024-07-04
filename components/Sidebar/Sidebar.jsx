@@ -10,6 +10,9 @@ import Link from "next/link";
 import Icon from "../icons";
 
 const Sidebar = ({ isOpen, onClose }) => {
+  const handleLogoClick = () => {
+    onClose();
+  };
   return (
     <div
       className={clsx(
@@ -20,16 +23,22 @@ const Sidebar = ({ isOpen, onClose }) => {
     >
       <div className={css.sidebarHeader}>
         <Link href="/">
-          <Icon className={css.logo} id="icon-logo" width="227" height="115" />
+          <Icon
+            className={css.logo}
+            id="icon-logo"
+            width="227"
+            height="115"
+            onClick={handleLogoClick}
+          />
         </Link>
-        <IoMdClose className={css.closeIcon} onClick={onClose} />
+        <IoMdClose className={css.closeIcon} onClick={handleLogoClick} />
       </div>
       <div className={css.sidebarContent}>
         {/* <CallMeBlock /> */}
         <NavBar onClose={onClose} isInSidebar />
-        {/* <div className={css.topBar}>
+        <div className={css.topBar}>
           <p>мы обеспечим вам лучший сервис</p>
-        </div> */}
+        </div>
       </div>
     </div>
   );
