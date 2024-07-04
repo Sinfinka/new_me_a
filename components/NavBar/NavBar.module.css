@@ -6,9 +6,9 @@
 
 .navigation .navLink {
   font-family: Clear Sans;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 113.71%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
   color: var(--secondary-color);
   padding: 0 15px 15px 15px;
   white-space: nowrap;
@@ -21,15 +21,22 @@
 .inSidebar .navigation {
   /* display: block; */
   flex-direction: column;
+  padding-left: 21px;
+  margin-bottom: auto;
 }
 
 .inSidebar .navLink {
   padding-bottom: 24px;
 }
 
-.inSidebar .navLink.active {
-}
-
 .inSidebar .li {
   margin-bottom: 24px;
+}
+
+@media (min-width: 375px) {
+  .navigation .navLink {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 113.71%;
+  }
 }

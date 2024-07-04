@@ -1,8 +1,6 @@
-// Sidebar.jsx
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 import clsx from "clsx";
-import con from "../../styles/container.module.css";
 import css from "./Sidebar.module.css";
 import { NavBar } from "../NavBar/NavBar";
 import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
@@ -13,14 +11,9 @@ const Sidebar = ({ isOpen, onClose }) => {
   const handleLogoClick = () => {
     onClose();
   };
+
   return (
-    <div
-      className={clsx(
-        css.sidebar,
-        { [css.sidebarOpen]: isOpen },
-        con.container
-      )}
-    >
+    <div className={clsx(css.sidebar, { [css.sidebarOpen]: isOpen })}>
       <div className={css.sidebarHeader}>
         <Link href="/">
           <Icon
@@ -34,8 +27,12 @@ const Sidebar = ({ isOpen, onClose }) => {
         <IoMdClose className={css.closeIcon} onClick={handleLogoClick} />
       </div>
       <div className={css.sidebarContent}>
-        {/* <CallMeBlock /> */}
-        <NavBar onClose={onClose} isInSidebar />
+        <div className={css.sidebarNavBar}>
+          <NavBar onClose={onClose} isInSidebar />
+        </div>
+        <div className={css.sidebarCallMeBlock}>
+          <CallMeBlock isInSidebar />
+        </div>
         <div className={css.topBar}>
           <p>мы обеспечим вам лучший сервис</p>
         </div>
