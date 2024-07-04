@@ -14,6 +14,7 @@
   --background-color: #ececec;
   --box-shadow: #592a0145;
   --text-blue: rgb(30, 116, 130);
+  --text-blue-hover: rgb(97, 200, 216);
   --lineal-gradient: linear-gradient(
     to left,
     rgb(51, 197, 225),

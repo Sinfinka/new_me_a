@@ -74,8 +74,8 @@ export default function Home() {
           <Image
             src="/DrManiHabibi.png"
             alt="Dr Mani Habibi"
-            width={797}
-            height={516}
+            width={272}
+            height={176}
           />
         </div>
       </div>

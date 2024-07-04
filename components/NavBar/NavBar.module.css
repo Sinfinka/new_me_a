@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 
-.navLink {
+.navigation .navLink {
   font-family: Clear Sans;
   font-size: 24px;
   font-weight: 700;
@@ -14,6 +14,22 @@
   white-space: nowrap;
 }
 
-.active {
+.navigation .navLink.active {
   color: var(--accent-color);
+}
+
+.inSidebar .navigation {
+  /* display: block; */
+  flex-direction: column;
+}
+
+.inSidebar .navLink {
+  padding-bottom: 24px;
+}
+
+.inSidebar .navLink.active {
+}
+
+.inSidebar .li {
+  margin-bottom: 24px;
 }
