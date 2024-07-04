@@ -7,7 +7,7 @@ import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
 import Link from "next/link";
 import Icon from "../icons";
 
-const Sidebar = ({ isOpen, onClose }) => {
+const Sidebar = ({ isOpen, onClose, toggleModal }) => {
   const handleLogoClick = () => {
     onClose();
   };
@@ -31,7 +31,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           <NavBar onClose={onClose} isInSidebar />
         </div>
         <div className={css.sidebarCallMeBlock}>
-          <CallMeBlock isInSidebar />
+          <CallMeBlock onClick={toggleModal} isInSidebar />
         </div>
         <div className={css.topBar}>
           <p>мы обеспечим вам лучший сервис</p>
