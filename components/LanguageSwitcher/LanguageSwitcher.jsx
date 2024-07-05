@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import clsx from "clsx";
-import css from "./LanguageSwitcher.module.css"; // Файл зі стилями
+import css from "./LanguageSwitcher.module.css";
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ isInFooter }) => {
   const router = useRouter();
   //   const pathname = router.pathname;
 
@@ -17,7 +17,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className={clsx(css.languageSwitcher)}>
+    <div className={clsx(css.languageSwitcher, { [css.inFooter]: isInFooter })}>
       <button
         className={clsx(css.languageButton, {
           [css.active]: router.locale === "ru",

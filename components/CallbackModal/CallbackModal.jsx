@@ -5,7 +5,7 @@ import PhoneInput from "react-phone-number-input";
 import Button from "../Button/Button";
 import { validationSchema } from "./validationSchema";
 
-const CallbackModal = ({ isOpen, onClose }) => {
+const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
   const modalRef = useRef(null);
   const backdropRef = useRef(null);
 
@@ -27,7 +27,7 @@ const CallbackModal = ({ isOpen, onClose }) => {
         backdropRef.current.removeEventListener("click", handleBackdropClick);
       }
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, handleBackdropClick]);
 
   if (!isOpen) {
     return null;
@@ -43,7 +43,7 @@ const CallbackModal = ({ isOpen, onClose }) => {
     const phoneNumber = values.phone;
     console.log(phoneNumber);
 
-    // onSubmit(values, { setSubmitting });
+    onSubmit(values, { setSubmitting });
   };
 
   return (

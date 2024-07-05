@@ -42,21 +42,6 @@
   padding-bottom: 10px;
 }
 
-.inSidebar .workTime {
-  margin-bottom: 100px;
-}
-
-.inSidebar {
-  flex-direction: column;
-  align-items: end;
-  padding-right: 21px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: none;
-  box-shadow: none;
-  margin-bottom: auto;
-}
-
 @media (min-width: 375px) {
   .telLink {
     font-size: 18px;
@@ -86,5 +71,65 @@
   .btn:hover,
   .btn:focus {
     color: var(--text-blue-hover);
+  }
+}
+/* -------------------- Sidebar ------------------- */
+
+.inSidebar .workTime {
+  margin-bottom: 100px;
+}
+
+.inSidebar {
+  flex-direction: column;
+  align-items: end;
+  padding-right: 21px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+  box-shadow: none;
+  margin-bottom: auto;
+}
+
+/* -------------------- Footer ------------------- */
+.inFooter {
+  flex-direction: column;
+  align-items: end;
+  border-bottom: none;
+  box-shadow: none;
+  margin-bottom: 16px;
+}
+
+.inFooter .telLink {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.inFooter .telLink:hover,
+.inFooter .telLink:focus {
+  color: var(--text-blue-hover);
+}
+
+.inFooter .btn {
+  font-size: 14px;
+  color: var(--text-color);
+  border-bottom: 1px dashed var(--text-color);
+}
+
+.inFooter .workTime {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+@media (min-width: 375px) {
+  .inFooter .telLink {
+    font-size: 20px;
+  }
+
+  .inFooter .btn {
+    font-size: 20px;
+  }
+
+  .inFooter .workTime {
+    font-size: 20px;
   }
 }

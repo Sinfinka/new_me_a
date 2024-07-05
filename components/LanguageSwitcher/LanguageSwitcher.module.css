@@ -13,9 +13,28 @@
   border-bottom: 4px solid var(--secondary-color);
   background-color: inherit;
   cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.languageButton:hover,
+.languageButton:focus {
+  color: var(--text-blue-hover);
+  border-bottom: 4px solid var(--text-blue-hover);
 }
 
 .languageButton.active {
   color: var(--text-color-black);
+  border-bottom: 4px solid var(--accent-color);
+}
+
+/* -----------------------Footer-------------------- */
+
+.inFooter .languageButton {
+  color: var(--text-color);
+  border-bottom: 4px solid var(--text-color);
+}
+
+.inFooter .languageButton.active {
+  color: var(--secondary-color);
   border-bottom: 4px solid var(--accent-color);
 }
