@@ -29,7 +29,11 @@
 
 /* -----------------------Footer-------------------- */
 
-.inFooter .languageButton {
+.inFooter {
+  display: none;
+}
+
+/* .inFooter .languageButton {
   color: var(--text-color);
   border-bottom: 4px solid var(--text-color);
 }
@@ -37,4 +41,4 @@
 .inFooter .languageButton.active {
   color: var(--secondary-color);
   border-bottom: 4px solid var(--accent-color);
-}
+} */

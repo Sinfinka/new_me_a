@@ -67,6 +67,10 @@
   }
 }
 @media (min-width: 1440px) {
+  .inFooter {
+    margin-top: 48px;
+  }
+
   .inFooter .navigation {
     flex-direction: row;
   }

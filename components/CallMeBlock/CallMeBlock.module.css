@@ -104,6 +104,8 @@
   color: var(--text-color);
 }
 
+.inFooter .btn:hover,
+.inFooter .btn:focus,
 .inFooter .telLink:hover,
 .inFooter .telLink:focus {
   color: var(--text-blue-hover);
@@ -131,5 +133,28 @@
 
   .inFooter .workTime {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .inFooter {
+    padding-top: 16px;
+    padding-right: 16px;
+    margin: 0;
+  }
+
+  .inFooter .address,
+  .inFooter .btn,
+  .inFooter .telLink {
+    padding-bottom: 8px;
+    margin: 0;
+  }
+
+  .inFooter .btn {
+    margin-bottom: 8px;
+  }
+
+  .inFooter .workTime {
+    margin: 0;
   }
 }

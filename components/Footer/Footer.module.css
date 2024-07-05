@@ -41,4 +41,57 @@
 .linkToGit {
   text-decoration: underline;
   color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.linkToGit:hover,
+.linkToGit:focus {
+  color: var(--text-blue-hover);
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+  }
+
+  .wrapper {
+    display: grid;
+    /* grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px; */
+  }
+
+  .logo {
+    margin: 0;
+    width: 150px;
+    height: 100px;
+    /* grid-column: 1; */
+  }
+
+  .navigation {
+    grid-column: 2 / span 2;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .text {
+    grid-column: 1 / span 3;
+    text-align: center;
+  }
+
+  .rotatingIcon {
+    animation: spin 4s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
