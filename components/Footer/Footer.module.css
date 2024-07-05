@@ -3,6 +3,21 @@
   background: var(--lineal-gradient);
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.logo {
+  margin-bottom: 16px;
+}
+
 .text {
   text-align: center;
   color: var(--text-color);

@@ -4,11 +4,24 @@ import con from "../../styles/container.module.css";
 import Link from "next/link";
 import Icon from "../icons";
 import { NavBar } from "../NavBar/NavBar";
+import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
+import { useState } from "react";
+import CallbackModal from "../CallbackModal/CallbackModal";
 
 function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <footer className={css.footer}>
-      <div className={con.container}>
+      <div className={`${con.container} ${css.wrapper}`}>
         <Link href="/">
           <Icon
             className={css.logo}
@@ -17,7 +30,10 @@ function Footer() {
             height="50"
           />
         </Link>
-        <NavBar isInFooter />
+        <div className={css.navigation}>
+          <NavBar isInFooter />
+          <CallMeBlock isInFooter onClick={handleOpenModal} />
+        </div>
         <p className={css.text}>
           2024 Developed by <FaInfinity className={css.rotatingIcon} />{" "}
           <Link href="https://github.com/Sinfinka" className={css.linkToGit}>
@@ -25,6 +41,14 @@ function Footer() {
           </Link>
         </p>
       </div>
+      <CallbackModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onSubmit={(values, { setSubmitting }) => {
+          setSubmitting(false);
+          handleCloseModal();
+        }}
+      />
     </footer>
   );
 }
