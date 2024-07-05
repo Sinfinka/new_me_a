@@ -13,11 +13,11 @@ function Footer() {
           <Icon
             className={css.logo}
             id="icon-logo-white"
-            width="227"
-            height="115"
+            width="100"
+            height="50"
           />
         </Link>
-        <NavBar />
+        <NavBar isInFooter />
         <p className={css.text}>
           2024 Developed by <FaInfinity className={css.rotatingIcon} />{" "}
           <Link href="https://github.com/Sinfinka" className={css.linkToGit}>

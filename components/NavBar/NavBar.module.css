@@ -40,3 +40,18 @@
     line-height: 113.71%;
   }
 }
+
+.inFooter .navigation {
+  flex-direction: column;
+}
+.inFooter .navLink {
+  color: var(--text-color);
+  font-size: 12px;
+  padding: 0;
+}
+
+@media (min-width: 1440px) {
+  .inFooter .navigation {
+    flex-direction: row;
+  }
+}
