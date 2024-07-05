@@ -4,10 +4,15 @@ import clsx from "clsx";
 import Link from "next/link";
 import css from "./NavBar.module.css";
 
-export function NavBar({ onClose, isInSidebar }) {
+export function NavBar({ onClose, isInSidebar, isInFooter }) {
   const pathname = usePathname();
   return (
-    <nav className={clsx({ [css.inSidebar]: isInSidebar })}>
+    <nav
+      className={clsx({
+        [css.inSidebar]: isInSidebar,
+        [css.inFooter]: isInFooter,
+      })}
+    >
       <ul className={css.navigation}>
         <li className={css.li}>
           <Link
