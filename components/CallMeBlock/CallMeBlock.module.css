@@ -10,7 +10,7 @@
 }
 
 .address {
-  padding-bottom: 21px;
+  padding-bottom: 16px;
 }
 
 .telLink {
@@ -77,6 +77,10 @@
 }
 
 @media (min-width: 1440px) {
+  .callMe {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+  }
   .telLink:hover,
   .telLink:focus,
   .btn:hover,
