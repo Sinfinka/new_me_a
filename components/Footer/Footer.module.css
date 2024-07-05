@@ -1,13 +1,11 @@
 .footer {
-  background-color: rgb(233, 233, 233);
-  align-items: baseline;
-  text-align: center;
-  margin-top: auto;
-  height: 3rem;
+  padding-top: 16px;
+  background: var(--lineal-gradient);
 }
 
 .text {
-  background-color: rgb(113, 184, 255);
+  text-align: center;
+  color: var(--text-color);
   letter-spacing: 0.8px;
   padding: 1em;
 }
@@ -27,4 +25,5 @@
 
 .linkToGit {
   text-decoration: underline;
+  color: var(--text-color);
 }

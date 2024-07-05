@@ -1,0 +1,20 @@
+.achivSection {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: var(--background-color-white);
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1440px) {
+  .achivSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 24px;
+  }
+}

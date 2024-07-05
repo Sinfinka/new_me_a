@@ -9,7 +9,7 @@
   color: var(--text-color);
   background-color: var(--accent-color);
   border: 2px solid var(--text-color);
-  border-radius: 3px;
+  border-radius: 5px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
 }
