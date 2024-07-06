@@ -3,7 +3,7 @@ import css from "./CallbackModal.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import PhoneInput from "react-phone-number-input";
 import Button from "../Button/Button";
-import { validationSchema } from "./validationSchema";
+import { validationSchema } from "../../schemas/validationSchema";
 
 const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
   const modalRef = useRef(null);

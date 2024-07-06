@@ -9,6 +9,7 @@ import { AchivSection } from "../components/AchivSection/AchivSection";
 import { Services } from "../components/Services/Services";
 import { ToastContainer, toast } from "react-toastify";
 import FloatingButton from "../components/FloatingButton/FloatingButton";
+import { CallBackSection } from "../components/CallBackSection/CallBackSection";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -109,7 +110,7 @@ export default function Home() {
       </section>
       <AchivSection />
       <Services />
-      <AchivSection />
+      <CallBackSection />
     </>
   );
 }
