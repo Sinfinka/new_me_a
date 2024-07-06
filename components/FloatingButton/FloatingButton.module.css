@@ -1,0 +1,48 @@
+.floatingButtonContainer {
+  position: fixed;
+  top: 320px;
+  right: 5px;
+  z-index: 1000;
+}
+
+.floatingButton {
+  background-color: var(--background-color-white);
+  border: none;
+  border-radius: 4px;
+  width: 70px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 5px 3px 2px 2px rgba(136, 132, 132, 0.325);
+  transition: transform 0.3s ease;
+}
+
+.floatingButton:hover {
+  transform: scale(1.1);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+}
+
+/* .buttonWhatsApp,
+.buttonTelegram,
+.buttonViber {
+} */
+
+/* .button:hover {
+  transform: scale(1.1);
+} */
+
+@media (min-width: 1440px) {
+  .buttonViber {
+    display: none;
+  }
+}

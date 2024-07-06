@@ -7,6 +7,7 @@ import { NavBar } from "../NavBar/NavBar";
 import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
 import { useState } from "react";
 import CallbackModal from "../CallbackModal/CallbackModal";
+import { toast } from "react-toastify";
 
 function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,6 +18,13 @@ function Footer() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleSubmit = (values, { setSubmitting }) => {
+    console.log("Форма відправлена з футера", values);
+    setSubmitting(false);
+    toast.success("Сообщение отправлено. Вам позвонит консультант.");
+    handleCloseModal();
   };
 
   return (
@@ -44,10 +52,7 @@ function Footer() {
       <CallbackModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        onSubmit={(values, { setSubmitting }) => {
-          setSubmitting(false);
-          handleCloseModal();
-        }}
+        onSubmit={handleSubmit}
       />
     </footer>
   );

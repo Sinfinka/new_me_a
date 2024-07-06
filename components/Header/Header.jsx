@@ -8,7 +8,8 @@ import { NavBar } from "../NavBar/NavBar";
 import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
 import Sidebar from "../Sidebar/Sidebar";
 import CallbackModal from "../CallbackModal/CallbackModal";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 function Header() {
@@ -24,15 +25,14 @@ function Header() {
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log("Форма відправлена", values);
-    setSubmitting(false); //  для зупинки індикатора завантаження
+    console.log("Форма відправлена з хедера", values);
+    setSubmitting(false);
     toast.success("Сообщение отправлено. Вам позвонит консультант.");
-    setIsModalOpen(false); // Закриття модалки
+    setIsModalOpen(false);
   };
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <header className={css.header}>
         <div className={css.topBar}>
           <p>мы обеспечим вам лучший сервис</p>

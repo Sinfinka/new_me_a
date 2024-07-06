@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import css from "./CallbackModal.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import PhoneInput from "react-phone-number-input";
@@ -9,25 +9,29 @@ const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
   const modalRef = useRef(null);
   const backdropRef = useRef(null);
 
-  const handleBackdropClick = (e) => {
-    if (e.target === backdropRef.current && isOpen) {
-      onClose();
-    }
-  };
+  const handleBackdropClick = useCallback(
+    (e) => {
+      if (e.target === backdropRef.current && isOpen) {
+        onClose();
+      }
+    },
+    [isOpen, onClose]
+  );
 
   useEffect(() => {
-    if (isOpen && backdropRef.current) {
-      backdropRef.current.addEventListener("click", handleBackdropClick);
-    } else if (backdropRef.current) {
-      backdropRef.current.removeEventListener("click", handleBackdropClick);
+    const backdrop = backdropRef.current;
+    if (isOpen && backdrop) {
+      backdrop.addEventListener("click", handleBackdropClick);
+    } else if (backdrop) {
+      backdrop.removeEventListener("click", handleBackdropClick);
     }
 
     return () => {
-      if (backdropRef.current) {
-        backdropRef.current.removeEventListener("click", handleBackdropClick);
+      if (backdrop) {
+        backdrop.removeEventListener("click", handleBackdropClick);
       }
     };
-  }, [isOpen, onClose, handleBackdropClick]);
+  }, [isOpen, handleBackdropClick]);
 
   if (!isOpen) {
     return null;
@@ -39,11 +43,9 @@ const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log(values);
-    const phoneNumber = values.phone;
-    console.log(phoneNumber);
-
     onSubmit(values, { setSubmitting });
+    setSubmitting(false);
+    onClose();
   };
 
   return (
@@ -99,7 +101,6 @@ const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
                   <div className={css.phoneNumberDisplay}>
                     <p>Проверте Ваш номер телефона: {values.phone}</p>
                   </div>
-
                   <ErrorMessage
                     name="phone"
                     component="div"
@@ -109,7 +110,7 @@ const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
                 <div className={css.modalFooter}>
                   <Button
                     text="Позвоните мне"
-                    type={"submit"}
+                    type="submit"
                     disabled={isSubmitting}
                   />
                 </div>
