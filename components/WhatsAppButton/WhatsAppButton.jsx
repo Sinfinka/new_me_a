@@ -4,7 +4,7 @@ import css from "./WhatsAppButton.module.css";
 
 function WhatsAppButton({ phoneNumber }) {
   const handleButtonClick = () => {
-    window.location.href = `https://wa.me/${phoneNumber}`;
+    window.open(`https://wa.me/${phoneNumber}`, "_blank");
   };
 
   return (

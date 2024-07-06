@@ -4,7 +4,7 @@ import css from "./TelegramButton.module.css";
 
 function TelegramButton({ chatIdOrUsername }) {
   const handleButtonClick = () => {
-    window.location.href = `https://t.me/${chatIdOrUsername}`;
+    window.open(`https://t.me/${chatIdOrUsername}`, "_blank");
   };
 
   return (
