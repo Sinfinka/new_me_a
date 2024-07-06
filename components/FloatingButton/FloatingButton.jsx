@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import css from "./FloatingButton.module.css";
 
 import TelegramButton from "../TelegramButton/TelegramButton";
@@ -8,13 +8,27 @@ import Icon from "../icons";
 
 const FloatingButton = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (buttonRef.current && !buttonRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className={css.floatingButtonContainer}>
+    <div className={css.floatingButtonContainer} ref={buttonRef}>
       <button className={css.floatingButton} onClick={toggleOpen}>
         <Icon className={css.logo} id="icon-mesage" width="52" height="43" />
       </button>
