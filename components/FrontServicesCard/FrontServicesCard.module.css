@@ -10,6 +10,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .header {
@@ -25,5 +27,12 @@
 
   .header {
     font-size: 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper:hover,
+  .wrapper:focus {
+    transform: scale(1.02);
   }
 }

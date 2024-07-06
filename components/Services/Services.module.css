@@ -1,10 +1,16 @@
 .services {
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .wrapper {
     display: flex;
     flex-wrap: wrap;
   }
 }
+/* @media (min-width: 1440px) {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+} */

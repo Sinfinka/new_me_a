@@ -1,8 +1,9 @@
 import Button from "../Button/Button";
+import LinkButton from "../LinkButton/LinkButton";
 import css from "./ServicesCard.module.css";
 import Image from "next/image";
 
-export function ServicesCard({ text, src, alt }) {
+export function ServicesCard({ text, src, alt, href }) {
   return (
     <div className={css.wrapper}>
       <Image
@@ -14,7 +15,7 @@ export function ServicesCard({ text, src, alt }) {
         height={170}
       />
       <h3 className={css.header}>{text}</h3>
-      <Button text={"Больше..."} />
+      <LinkButton textBtn={"Узнать больше"} href={href} />
     </div>
   );
 }
