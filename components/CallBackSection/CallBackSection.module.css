@@ -22,9 +22,12 @@
 .form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
 }
 
 .formGroup {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 15px;
 }
 
@@ -40,7 +43,7 @@
   font-size: 16px;
   border: 2px solid var(--background-color);
   border-radius: 3px;
-  width: 100%;
+  width: 256px;
   background: rgba(255, 255, 255, 0.18);
 }
 
@@ -48,42 +51,149 @@
   color: var(--text-blue-hover);
 }
 
+.errorWrapper {
+  height: 40px;
+}
+
 .error {
-  color: rgb(255, 191, 191);
+  color: rgb(255, 178, 178);
   font-size: 14px;
   margin-top: 5px;
 }
 
-@media (min-width: 375px) {
-  .header {
-    font-size: 22px;
-  }
+.text {
+  color: var(--text-color);
+  font-style: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
-@media (min-width: 1440px) {
+.social {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (min-width: 375px) {
   .callbackSection {
-    /* align-items: baseline; */
     margin-left: 24px;
     margin-right: 24px;
     padding: 65px 24px;
   }
 
+  .header {
+    font-size: 22px;
+  }
+
+  .input {
+    width: 280px;
+  }
+
+  .error {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+  .social {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .viberLink,
+  .telegramLink,
+  .whatsAppLink {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    font-size: 36px;
+  }
+
+  .form {
+    margin-bottom: 40px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .input {
+    font-size: 26px;
+    width: 350px;
+  }
+
+  .error {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .social {
+    gap: 38px;
+  }
+
+  .viberLink {
+    display: none;
+  }
+
+  .telegramLink,
+  .whatsAppLink {
+    width: 150px;
+    height: 150px;
+  }
+
+  .telegramLink,
+  .whatsAppLink {
+    transition: transform 0.3s ease;
+  }
+
+  .telegramLink:hover,
+  .whatsAppLink:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1440px) {
   .form {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 44px;
+    gap: 56px;
   }
+
   .header {
     font-size: 42px;
     margin-bottom: 44px;
   }
+
+  .label {
+    font-size: 26px;
+  }
+
   .input {
-    margin-left: 10px;
+    font-size: 26px;
+    /* margin-left: 16px; */
     width: 400px;
   }
-  .formGroup {
-    margin-bottom: 15px;
-    margin-right: 50px;
+
+  .error {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 32px;
+    margin-bottom: 60px;
   }
 }

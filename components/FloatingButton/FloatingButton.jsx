@@ -6,6 +6,9 @@ import ViberButton from "../ViberButton/ViberButton";
 import WhatsAppButton from "../WhatsAppButton/WhatsAppButton";
 import Icon from "../icons";
 
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER;
+const telegramName = process.env.NEXT_PUBLIC_TELEGRAM_NAME;
+
 const FloatingButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
@@ -35,13 +38,13 @@ const FloatingButton = () => {
       {isOpen && (
         <div className={css.buttonContainer}>
           <div className={css.buttonWhatsApp}>
-            <WhatsAppButton phoneNumber={"905303069524"} />
+            <WhatsAppButton phoneNumber={phoneNumber} />
           </div>
           <div className={css.buttonTelegram}>
-            <TelegramButton chatIdOrUsername={"elenademiriz"} />
+            <TelegramButton chatIdOrUsername={telegramName} />
           </div>
           <div className={css.buttonViber}>
-            <ViberButton phoneNumber={"905303069524"} />
+            <ViberButton phoneNumber={phoneNumber} />
           </div>
         </div>
       )}
