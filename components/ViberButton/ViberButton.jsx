@@ -4,7 +4,6 @@ import css from "./ViberButton.module.css";
 
 function ViberButton({ phoneNumber }) {
   const handleButtonClick = () => {
-    // window.open(`https://viber.com/${phoneNumber}`, "_blank");
     window.open(`https://vibr.cc/${phoneNumber}`, "_blank");
   };
 
@@ -16,7 +15,3 @@ function ViberButton({ phoneNumber }) {
 }
 
 export default ViberButton;
-
-{
-  /* <ViberButton phoneNumber={"+905303069524"} /> */
-}

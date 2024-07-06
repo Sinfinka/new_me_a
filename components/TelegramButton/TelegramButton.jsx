@@ -16,7 +16,3 @@ function TelegramButton({ chatIdOrUsername }) {
 }
 
 export default TelegramButton;
-
-{
-  /* <TelegramButton chatIdOrUsername={"elenademiriz"} /> */
-}

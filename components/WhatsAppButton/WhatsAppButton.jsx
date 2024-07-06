@@ -15,7 +15,3 @@ function WhatsAppButton({ phoneNumber }) {
 }
 
 export default WhatsAppButton;
-
-{
-  /* <WhatsAppButton phoneNumber={"905303069524"} /> */
-}
