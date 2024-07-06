@@ -27,7 +27,7 @@ const FloatingButton = () => {
             <TelegramButton chatIdOrUsername={"elenademiriz"} />
           </div>
           <div className={css.buttonViber}>
-            <ViberButton phoneNumber={"+905303069524"} />
+            <ViberButton phoneNumber={"905303069524"} />
           </div>
         </div>
       )}
