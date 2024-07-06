@@ -6,6 +6,9 @@ import Image from "next/image";
 import CallbackModal from "../components/CallbackModal/CallbackModal";
 import { useState } from "react";
 import { AchivSection } from "../components/AchivSection/AchivSection";
+import { Services } from "../components/Services/Services";
+import { ToastContainer, toast } from "react-toastify";
+import FloatingButton from "../components/FloatingButton/FloatingButton";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,9 +21,17 @@ export default function Home() {
     setIsModalOpen(false);
   };
 
+  const handleSubmit = (values, { setSubmitting }) => {
+    console.log("Форма відправлена з головної", values);
+    setSubmitting(false);
+    toast.success("Сообщение отправлено. Вам позвонит консультант.");
+    handleCloseModal();
+  };
+
   return (
     <>
       <section className={css.hero}>
+        <ToastContainer position="top-right" autoClose={3000} />
         <Head>
           <title>Медицинская клиника New Me | Главная страница</title>
           <meta
@@ -79,18 +90,25 @@ export default function Home() {
               onClick={handleButtonClick}
               className={css.button}
             />
-            <CallbackModal isOpen={isModalOpen} onClose={handleCloseModal} />
+            <CallbackModal
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              onSubmit={handleSubmit}
+            />
           </div>
           <div className={css.imageContainer}>
             <Image
               src="/DrManiHabibi.png"
               alt="Dr Mani Habibi"
-              width={272}
-              height={176}
+              width={700}
+              height={600}
             />
           </div>
         </div>
+        <FloatingButton />
       </section>
+      <AchivSection />
+      <Services />
       <AchivSection />
     </>
   );

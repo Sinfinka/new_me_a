@@ -1,0 +1,29 @@
+.wrapper {
+  background-image: url("/Card.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 284px;
+  height: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.header {
+  color: var(--text-color);
+  font-size: 68px;
+}
+
+@media (min-width: 375px) {
+  .wrapper {
+    width: 324px;
+    height: 360px;
+  }
+
+  .header {
+    font-size: 72px;
+  }
+}
