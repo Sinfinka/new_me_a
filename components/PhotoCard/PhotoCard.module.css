@@ -1,0 +1,86 @@
+.wrapper {
+  width: 284px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  padding: 16px;
+  color: var(--text-blue);
+  background: var(--background-color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.text {
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.wrapper .textCardButton {
+  font-size: 14px;
+  padding: 4px 12px;
+  max-width: 150px;
+  max-height: 40px;
+}
+
+.photoCardButton {
+  border: 3px solid var(--accent-color);
+  background-color: inherit;
+  color: var(--accent-color);
+}
+
+@media (min-width: 375px) {
+  .wrapper {
+    width: 324px;
+    padding: 24px;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper {
+    width: 720px;
+    padding: 30px;
+    margin-bottom: 0;
+  }
+
+  .header {
+    font-size: 22px;
+  }
+  .text {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .wrapper {
+    width: 488px;
+    padding: 30px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  .header {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    width: 696px;
+  }
+
+  .header {
+    font-size: 44px;
+  }
+  .text {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
+}

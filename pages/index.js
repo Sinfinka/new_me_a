@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Button from "../components/Button/Button";
+
 import css from "./HomePage.module.css";
 import con from "../styles/container.module.css";
 import Image from "next/image";
@@ -11,6 +11,9 @@ import { ToastContainer, toast } from "react-toastify";
 import FloatingButton from "../components/FloatingButton/FloatingButton";
 import { CallBackSection } from "../components/CallBackSection/CallBackSection";
 import { QuestionsSection } from "../components/QuestionsSection/QuestionsSection";
+
+import { AboutClinicSection } from "../components/AboutClinicSection/AboutClinicSection";
+import Button from "../components/Button/Button";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -90,7 +93,7 @@ export default function Home() {
             <Button
               text="Позвоните мне"
               onClick={handleButtonClick}
-              className={css.button}
+              className={css.HeroButton}
             />
             <CallbackModal
               isOpen={isModalOpen}
@@ -113,6 +116,7 @@ export default function Home() {
       <Services />
       <CallBackSection />
       <QuestionsSection />
+      <AboutClinicSection />
     </>
   );
 }
