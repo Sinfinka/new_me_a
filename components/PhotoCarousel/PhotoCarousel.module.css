@@ -1,3 +1,24 @@
 .slider {
   margin-bottom: 50px;
 }
+/* PhotoCarousel.module.css */
+.slider :global(.slick-prev),
+.slider :global(.slick-next) {
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.slider :global(.slick-prev:before),
+.slider :global(.slick-next:before) {
+  font-size: 30px;
+  color: var(--accent-color);
+}
+
+.slider :global(.slick-prev) {
+  left: -20px;
+}
+
+.slider :global(.slick-next) {
+  right: -10px;
+}
