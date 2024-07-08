@@ -1,0 +1,6 @@
+@media (min-width: 1024px) {
+  .aboutClinicSection {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
