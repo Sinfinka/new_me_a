@@ -1,0 +1,105 @@
+.heroSection {
+  background: url("/DrManiHabibi.png") center/cover no-repeat,
+    var(--lineal-gradient);
+  background-size: auto 50%, cover;
+  background-position: bottom center, center;
+  width: 100%;
+  height: calc(100vh - 78px);
+  padding-top: 25px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  /* height: 450px; */
+}
+/* .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }*/
+
+.header {
+  color: var(--text-color);
+  font-family: Clear Sans;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  margin-bottom: 30px;
+  /* display: flex;
+    flex-direction: column;
+    letter-spacing: 0%;
+    text-align: left;
+  
+     */
+}
+.headerSmallSecond,
+.headerSmall {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  white-space: nowrap;
+}
+
+.button {
+  align-self: flex-start;
+  max-width: 200px;
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    background-position: bottom right, center;
+    background-size: auto 70%, cover;
+  }
+  .header {
+    font-size: 96px;
+    line-height: 113px;
+  }
+
+  .headerSmall,
+  .headerSmallSecond {
+    font-size: 60px;
+    line-height: 75px;
+    margin-bottom: 0px;
+  }
+
+  .headerWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1440px) {
+  .heroSection {
+    background-size: auto 95%, cover;
+    background-position: calc(100% - 220px) bottom, center;
+    height: calc(100vh - 160px);
+  }
+  .header {
+    max-width: 600px;
+    font-size: 150px;
+    line-height: 150px;
+  }
+  .headerSmall,
+  .headerSmallSecond {
+    font-size: 90px;
+    line-height: 75px;
+    margin-top: 30px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 150px;
+  }
+
+  .HeroButton {
+    font-size: 26px;
+    height: 80px;
+  }
+}
