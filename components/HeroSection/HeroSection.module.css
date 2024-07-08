@@ -82,20 +82,20 @@
   }
   .header {
     max-width: 600px;
-    font-size: 150px;
+    font-size: 130px;
     line-height: 150px;
   }
   .headerSmall,
   .headerSmallSecond {
-    font-size: 90px;
-    line-height: 75px;
+    font-size: 75px;
+    line-height: 55px;
     margin-top: 30px;
   }
   .content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 150px;
+    gap: 20px;
   }
 
   .HeroButton {
