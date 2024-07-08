@@ -1,0 +1,12 @@
+.mainSection {
+  background: var(--lineal-gradient);
+}
+
+.header {
+  color: var(--text-color);
+  font-size: 40px;
+}
+
+.image {
+  text-align: right;
+}

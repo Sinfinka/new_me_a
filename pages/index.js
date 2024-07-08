@@ -10,6 +10,7 @@ import { Services } from "../components/Services/Services";
 import { ToastContainer, toast } from "react-toastify";
 import FloatingButton from "../components/FloatingButton/FloatingButton";
 import { CallBackSection } from "../components/CallBackSection/CallBackSection";
+import { QuestionsSection } from "../components/QuestionsSection/QuestionsSection";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -111,6 +112,7 @@ export default function Home() {
       <AchivSection />
       <Services />
       <CallBackSection />
+      <QuestionsSection />
     </>
   );
 }
