@@ -1,11 +1,39 @@
 import "../styles/global.css";
 import Layout from "../components/Layout/Layout";
+import { useState, useEffect } from "react";
+import Router from "next/router";
+import Loader from "../components/Loader/Loader";
 
 function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true); // Початковий стан - true
+
+  useEffect(() => {
+    const handleStart = () => setLoading(true);
+    const handleComplete = () => setLoading(false);
+
+    Router.events.on("routeChangeStart", handleStart);
+    Router.events.on("routeChangeComplete", handleComplete);
+    Router.events.on("routeChangeError", handleComplete);
+
+    handleComplete();
+
+    return () => {
+      Router.events.off("routeChangeStart", handleStart);
+      Router.events.off("routeChangeComplete", handleComplete);
+      Router.events.off("routeChangeError", handleComplete);
+    };
+  }, []);
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      )}
+    </>
   );
 }
 

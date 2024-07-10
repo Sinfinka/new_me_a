@@ -1,0 +1,61 @@
+/* styles/NotFound.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.imageContainer {
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  width: 350px;
+  height: auto;
+}
+
+.message {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.timer {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-bottom: 16px;
+}
+
+.button {
+  font-family: Clear Sans;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--accent-hover-color);
+}
