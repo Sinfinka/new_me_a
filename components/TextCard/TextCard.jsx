@@ -50,7 +50,7 @@ export function TextCard({ header, text }) {
       <p className={css.text}>{renderText()}</p>
       {isMobile && text.length > 300 && (
         <Button
-          text={isExpanded ? "Сховати" : "Більше"}
+          text={isExpanded ? "Спрятать" : "Больше"}
           onClick={handleToggle}
           type="button"
           className={css.textCardButton}

@@ -1,12 +1,22 @@
 .mainSection {
-  background: var(--lineal-gradient);
+  background: url("/hairMain.jpg"), var(--lineal-gradient);
+  background-size: cover; /* Масштабування зображення, щоб покрити весь контейнер */
+  background-position: center; /* Центрування зображення */
+  background-repeat: no-repeat; /* Запобігання повторенню зображення */
+  margin-bottom: 24px;
 }
 
 .header {
-  color: var(--text-color);
-  font-size: 40px;
+  color: var(--text-blue);
+  font-size: 28px;
+  padding: 0 44px 44px 24px;
+  max-width: 200px;
+  text-align: left; /* Вирівнювання тексту ліворуч */
 }
 
 .image {
-  text-align: right;
+  width: 2500px;
+  height: auto; /* Автоматична висота, щоб зберегти пропорції */
+  margin: 0 auto; /* Центрування зображення */
+  display: block; /* Встановлення блочного відображення для центрування */
 }

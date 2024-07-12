@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import Loader from "../components/Loader/Loader";
+import { ToastContainer } from "react-toastify";
 
 function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true); // Початковий стан - true
@@ -30,6 +31,7 @@ function App({ Component, pageProps }) {
         <Loader />
       ) : (
         <Layout>
+          <ToastContainer position="top-right" autoClose={3000} />
           <Component {...pageProps} />
         </Layout>
       )}
