@@ -1,22 +1,47 @@
 .mainSection {
   background: url("/hairMain.jpg"), var(--lineal-gradient);
-  background-size: cover; /* Масштабування зображення, щоб покрити весь контейнер */
-  background-position: center; /* Центрування зображення */
-  background-repeat: no-repeat; /* Запобігання повторенню зображення */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin-bottom: 24px;
+  box-shadow: 0px 3px 0px 0px rgba(136, 132, 132, 0.325);
+  border-bottom: 2px solid rgba(136, 132, 132, 0.716);
 }
 
 .header {
   color: var(--text-blue);
   font-size: 28px;
+  line-height: 1.5;
   padding: 0 44px 44px 24px;
-  max-width: 200px;
-  text-align: left; /* Вирівнювання тексту ліворуч */
+  max-width: 220px;
+  text-align: left;
 }
 
 .image {
   width: 2500px;
-  height: auto; /* Автоматична висота, щоб зберегти пропорції */
-  margin: 0 auto; /* Центрування зображення */
-  display: block; /* Встановлення блочного відображення для центрування */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .header {
+    font-size: 60px;
+    padding: 24px 54px 54px 54px;
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    font-size: 72px;
+    max-width: 520px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    font-size: 120px;
+    max-width: 820px;
+  }
 }
