@@ -3,6 +3,15 @@ import { TextCard } from "../TextCard/TextCard.jsx";
 import css from "./AboutClinicSection.module.css";
 
 export function AboutClinicSection() {
+  const images = [
+    "/clinic.jpg",
+    "/clinic5.jpg",
+    "/clinic1.jpg",
+    "/clinic2.jpg",
+    "/clinic3.jpg",
+    "/clinic6.jpg",
+  ];
+
   return (
     <section className={css.aboutClinicSection}>
       <TextCard
@@ -12,10 +21,10 @@ export function AboutClinicSection() {
         }
       />
       <PhotoCard
+        images={images}
         href={"/about"}
         textBtn={"Подробнее"}
         header={"Клиника здоровья NewMe"}
-        // text={"Современное оборудование и комфортные условия"}
       />
     </section>
   );

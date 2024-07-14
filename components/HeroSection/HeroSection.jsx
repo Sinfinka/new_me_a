@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import Image from "next/image";
+import { toast } from "react-toastify";
 import CallbackModal from "../CallbackModal/CallbackModal";
 import Button from "../Button/Button";
 import FloatingButton from "../FloatingButton/FloatingButton";
@@ -28,7 +27,6 @@ export const HeroSection = () => {
 
   return (
     <section className={css.heroSection}>
-      <ToastContainer position="top-right" autoClose={3000} />
       <Head>
         <title>Медицинская клиника New Me | Главная страница</title>
         <meta

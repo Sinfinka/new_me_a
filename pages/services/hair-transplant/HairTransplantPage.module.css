@@ -1,0 +1,71 @@
+.imageWrapper {
+  margin-bottom: 24px;
+  width: 284px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.image {
+  object-fit: cover;
+}
+
+.textCard {
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 16px;
+  width: 284px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  padding: 16px;
+  color: var(--text-blue);
+  background: var(--background-color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 375px) {
+  .imageWrapper {
+    width: 324px;
+  }
+  .textCard {
+    width: 324px;
+    padding: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 720px;
+  }
+  .textCard {
+    width: 720px;
+    padding: 30px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .imageWrapper {
+    width: 488px;
+    margin: 0 0 24px 0;
+  }
+  .textCard {
+    width: 488px;
+    padding: 30px;
+    margin: 0;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 1440px) {
+  .imageWrapper {
+    width: 696px;
+  }
+  .textCard {
+    width: 696px;
+    font-size: 20px;
+  }
+}

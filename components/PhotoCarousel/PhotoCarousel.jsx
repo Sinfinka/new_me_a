@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import css from "./PhotoCarousel.module.css";
+import Image from "next/image";
 
-const PhotoCarousel = () => {
+const PhotoCarousel = ({ images }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -15,24 +16,17 @@ const PhotoCarousel = () => {
 
   return (
     <Slider {...settings} className={css.slider}>
-      <div>
-        <img src={"/clinic.jpg"} alt="Photo 1" style={{ width: "100%" }} />
-      </div>
-      <div>
-        <img src={"/clinic5.jpg"} alt="Photo 1" style={{ width: "100%" }} />
-      </div>
-      <div>
-        <img src={"/clinic1.jpg"} alt="Photo 2" style={{ width: "100%" }} />
-      </div>
-      <div>
-        <img src={"/clinic2.jpg"} alt="Photo 3" style={{ width: "100%" }} />
-      </div>
-      <div>
-        <img src={"/clinic3.jpg"} alt="Photo 4" style={{ width: "100%" }} />
-      </div>
-      <div>
-        <img src={"/clinic6.jpg"} alt="Photo 5" style={{ width: "100%" }} />
-      </div>
+      {images.map((image, index) => (
+        <div key={index} className={css.imageContainer}>
+          <Image
+            src={image}
+            alt={`Photo ${index + 1}`}
+            layout="responsive"
+            width={800}
+            height={600}
+          />
+        </div>
+      ))}
     </Slider>
   );
 };
