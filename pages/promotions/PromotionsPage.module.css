@@ -1,0 +1,6 @@
+.promotionsMain {
+  background: url("/sale1copy.jpg"), var(--lineal-gradient-white);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

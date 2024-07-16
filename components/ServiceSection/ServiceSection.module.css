@@ -1,0 +1,16 @@
+.servicesSection {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 280px;
+  background-color: var(--background-color-white);
+}
+
+.imageWrapper {
+  margin-bottom: 24px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.image {
+  object-fit: cover;
+}

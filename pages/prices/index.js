@@ -1,7 +1,9 @@
 // pages/prices.js
 import Head from "next/head";
+import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
+import css from "./PricesPage.module.css";
 
-export default function Prices() {
+export default function PricesPage() {
   return (
     <div>
       <Head>
@@ -12,6 +14,8 @@ export default function Prices() {
         />
         {/* ЗМІНИТИ  метатеги Open Graph и Twitter  */}
       </Head>
+
+      <PageMainSection additionalClass={css.pricesMain} header={"Цены"} />
       <h1>Цены</h1>
       <p>Здесь будет информация о ценах на наши медицинские услуги.</p>
     </div>
