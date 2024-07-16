@@ -23,6 +23,11 @@
     rgb(51, 197, 225),
     rgb(21, 84, 92)
   );
+  --lineal-gradient-white: linear-gradient(
+    to left,
+    rgb(97, 200, 216),
+    rgb(255, 255, 255)
+  );
 }
 
 body {

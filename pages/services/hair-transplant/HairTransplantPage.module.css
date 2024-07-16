@@ -8,6 +8,13 @@
   object-fit: cover;
 }
 
+.hairMain {
+  background: url("/hairMain.jpg"), var(--lineal-gradient);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .textCard {
   font-size: 16px;
   text-align: left;

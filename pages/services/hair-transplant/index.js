@@ -23,6 +23,7 @@ export default function HairTransplantPage() {
 
       <div>
         <PageMainSection
+          additionalClass={css.hairMain}
           header={"Пересадка волос"}
           src={"/hairMain.jpg"}
           alt={"Пересадка волос"}

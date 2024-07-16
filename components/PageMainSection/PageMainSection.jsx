@@ -1,18 +1,10 @@
-// import Image from "next/image";
+import clsx from "clsx";
 import css from "./PageMainSection.module.css";
 
-export function PageMainSection({ header, src, alt }) {
+export function PageMainSection({ header, src, alt, additionalClass }) {
   return (
-    <section className={css.mainSection}>
+    <section className={clsx(css.mainSection, additionalClass)}>
       <h1 className={css.header}>{header}</h1>
-      {/* <Image
-        src={src}
-        alt={alt}
-        className={css.image}
-        layout="responsive"
-        width={1000}
-        height={250}
-      /> */}
     </section>
   );
 }

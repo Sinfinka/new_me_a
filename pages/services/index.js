@@ -1,4 +1,9 @@
 import Head from "next/head";
+import Link from "next/link";
+import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
+import css from "./ServicesPage.module.css";
+
+import ServiceSection from "../../components/ServiceSection/ServiceSection";
 
 const ServicesPage = () => {
   return (
@@ -11,12 +16,15 @@ const ServicesPage = () => {
         />
         {/* ЗМІНИТИ метатеги Open Graph и Twitter */}
       </Head>
-      <h1>Услуги</h1>
-      <h2>Пластическая хирургия</h2>
-      <p>
-        Наша клиника предлагает широкий спектр пластических хирургических
-        вмешательств, включая (вставьте ваши конкретные услуги здесь).
-      </p>
+
+      <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
+      <ServiceSection
+        serviceName={"Пластическая хирургия"}
+        serviceText={
+          "Наша клиника предлагает широкий спектр пластических хирургических вмешательств..........."
+        }
+      />
+      {/* <h1 className={css.header}>Услуги</h1> */}
 
       <h2>Бариатрия</h2>
       <p>
@@ -30,7 +38,8 @@ const ServicesPage = () => {
         лечения.
       </p>
 
-      <h2>Пересадка волос</h2>
+      <Link href={"/services/hair-transplant"}>Пересадка волос</Link>
+
       <p>
         Мы предоставляем услуги по пересадке волос, помогая вам восстановить и
         улучшить вашу волосистость.
