@@ -2,8 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
 import css from "./ServicesPage.module.css";
+import { services } from "../../db/services.js";
 
 import ServiceSection from "../../components/ServiceSection/ServiceSection";
+import ServiceCard from "../../components/ServiceCard/ServiceCard";
 
 const ServicesPage = () => {
   return (
@@ -18,12 +20,21 @@ const ServicesPage = () => {
       </Head>
 
       <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
-      <ServiceSection
-        serviceName={"Пластическая хирургия"}
-        serviceText={
-          "Наша клиника предлагает широкий спектр пластических хирургических вмешательств..........."
-        }
-      />
+
+      <div className={css.serviceCard}>
+        {services.map((service, index) => (
+          <ServiceCard
+            key={index}
+            title={service.title}
+            description={service.description}
+            image={service.image}
+            details={service.details}
+            links={service.links}
+            afterWords={service.afterWords}
+          />
+        ))}
+      </div>
+
       {/* <h1 className={css.header}>Услуги</h1> */}
 
       <h2>Бариатрия</h2>
