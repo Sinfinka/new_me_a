@@ -4,21 +4,164 @@
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  bottom: 0;
+  top: 13%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  background-color: white;
-  box-shadow: 24px;
+  transform: translateX(-50%);
+  width: 280px;
+  background-color: var(--background-color-white);
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);
   padding: 16px;
-  max-height: 80vh;
+  max-height: 87vh;
   overflow-y: auto;
   position: relative;
 }
+.modal .modalTitle {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-blue);
+  margin-bottom: 20px;
+}
+
+.modal .modalDescAll {
+  margin: 0 0 32px 0;
+}
+
+.cardWrapper {
+  padding: 12px;
+  border: 2px solid var(--color-blue);
+  border-radius: 14px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.modal .modalLink {
+  color: var(--text-blue);
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.image {
+  margin-bottom: 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  transition: scale 200ms ease;
+}
+.image:hover,
+.image:focus {
+  scale: 1.05;
+}
+
+.modalBtn {
+  background-color: inherit;
+  color: var(--text-blue);
+  font-size: 14px;
+  padding: 4px;
+  border: none;
+  transition: color 200ms ease;
+}
+
+.modalBtn:hover,
+.modalBtn:focus,
+.modal .modalLink:hover,
+.modal .modalLink:focus {
+  color: var(--color-blue);
+  background-color: inherit;
+  border: none;
+  border-color: inherit;
+  box-shadow: none;
+}
 
 .closeButton {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  left: 85%;
+}
+
+.cardContent {
+  text-align: center;
+}
+
+.cardContent .modalTitle {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-blue);
+  margin-bottom: 20px;
+}
+
+.cardContent .modalDesc {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-size: 14px;
+  padding: 8px 24px;
+}
+
+@media (min-width: 375px) {
+  .modal {
+    width: 343px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 736px;
+    padding: 24px;
+  }
+
+  .cardWrapper {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .modal .modalTitle {
+    font-size: 44px;
+  }
+
+  .modal .modalDescAll {
+    font-size: 20px;
+  }
+
+  .modalBtn {
+    font-size: 16px;
+  }
+
+  .closeButton {
+    left: 95%;
+  }
+
+  .image:hover,
+  .image:focus {
+    scale: 1.02;
+  }
+}
+
+@media (min-width: 1440px) {
+  .modal {
+    width: 1376px;
+    padding: 70px;
+  }
+
+  .modal .cardWrapperAll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cardWrapper {
+    width: 370px;
+  }
+
+  .modal .modalTitle {
+    font-size: 54px;
+    text-align: center;
+  }
+
+  .image:hover,
+  .image:focus {
+    scale: 1.01;
+  }
 }

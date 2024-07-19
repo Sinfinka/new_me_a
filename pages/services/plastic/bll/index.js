@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function PlasticSurgeryPge() {
+export default function BllPage() {
   return (
     <div>
       <Head>

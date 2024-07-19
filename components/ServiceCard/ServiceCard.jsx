@@ -4,7 +4,7 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Button,
+  // Button,
   Modal,
   Box,
   IconButton,
@@ -13,6 +13,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import css from "./ServiceCard.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Button from "../Button/Button";
 
 const ServiceCard = ({
   title,
@@ -27,18 +28,26 @@ const ServiceCard = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const handleClick = (url) => {
+    window.location.href = url;
+  };
+
   return (
     <div>
       <Card className={css.card}>
         <CardMedia component="img" height="140" image={image} alt={title} />
-        <CardContent>
-          <Typography variant="h5" component="div">
+        <CardContent className={css.cardContent}>
+          <Typography className={css.modalTitle} variant="h5" component="div">
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            className={css.modalDesc}
+            variant="body2"
+            color="text.secondary"
+          >
             {description}
           </Typography>
-          <Button onClick={handleOpen}>Больше</Button>
+          <Button className={css.btn} onClick={handleOpen} text={"Больше"} />
         </CardContent>
       </Card>
       <Modal
@@ -55,28 +64,43 @@ const ServiceCard = ({
           >
             <AiOutlineClose />
           </IconButton>
-          <Typography id="service-modal-title" variant="h6" component="h2">
+          <Typography
+            className={css.modalTitle}
+            id="service-modal-title"
+            variant="h6"
+            component="h2"
+          >
             {title}
           </Typography>
-          <Typography id="service-modal-description" sx={{ mt: 2 }}>
+          <Typography
+            className={css.modalDescAll}
+            id="service-modal-description"
+            sx={{ mt: 2 }}
+          >
             {details}
-            {links.map((link, index) => (
-              <div key={index}>
-                <Link href={link.href}>
-                  {" "}
-                  <Image
-                    src={link.src}
-                    alt={link.alt}
-                    className={css.image}
-                    layout="responsive"
-                    width={260}
-                    height={170}
-                  />{" "}
-                  {link.title}{" "}
-                </Link>{" "}
-                {link.description}
-              </div>
-            ))}
+            <div className={css.cardWrapperAll}>
+              {links.map((link, index) => (
+                <div className={css.cardWrapper} key={index}>
+                  <Link className={css.modalLink} href={link.href}>
+                    <Image
+                      src={link.src}
+                      alt={link.alt}
+                      className={css.image}
+                      layout="responsive"
+                      width={260}
+                      height={170}
+                    />
+                    {link.title}
+                  </Link>
+                  {link.description}
+                  <Button
+                    className={css.modalBtn}
+                    onClick={() => handleClick(link.href)}
+                    text={"Больше..."}
+                  />
+                </div>
+              ))}
+            </div>
             {afterWords}
             {/* Добавить тут Заказать звонок */}
           </Typography>
