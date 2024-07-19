@@ -4,7 +4,6 @@ import { PageMainSection } from "../../components/PageMainSection/PageMainSectio
 import css from "./ServicesPage.module.css";
 import { services } from "../../db/services.js";
 
-import ServiceSection from "../../components/ServiceSection/ServiceSection";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 
 const ServicesPage = () => {
@@ -21,7 +20,7 @@ const ServicesPage = () => {
 
       <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
 
-      <div className={css.serviceCard}>
+      <section className={css.serviceCard}>
         {services.map((service, index) => (
           <ServiceCard
             key={index}
@@ -33,7 +32,7 @@ const ServicesPage = () => {
             afterWords={service.afterWords}
           />
         ))}
-      </div>
+      </section>
 
       {/* <h1 className={css.header}>Услуги</h1> */}
 

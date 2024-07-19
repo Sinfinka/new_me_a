@@ -21,10 +21,10 @@
   box-shadow: 0 0 0 3px var(--box-shadow);
 }
 
-.button:focus {
+/* .button:focus {
   outline: none;
   box-shadow: 0 0 0 3px var(--box-shadow);
-}
+} */
 
 .textCardButton {
   background-color: brown;
