@@ -78,6 +78,10 @@
 .closeButton {
   left: 85%;
 }
+.closeButton:hover,
+.closeButton:focus {
+  color: var(--text-blue);
+}
 
 .cardContent {
   text-align: center;
