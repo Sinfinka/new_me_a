@@ -8,14 +8,38 @@ import ServiceCard from "../../components/ServiceCard/ServiceCard";
 
 const ServicesPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Услуги - Клиника NewMe </title>
         <meta
           name="description"
           content="Клиника NewMe Health предлагает широкий спектр медицинских услуг в области пластической хирургии, бариатрии, стоматологии, пересадки волос и коррекции зрения. Узнайте больше о наших услугах."
         />
-        {/* ЗМІНИТИ метатеги Open Graph и Twitter */}
+        {/* метатеги Open Graph */}
+        <meta property="og:title" content="Услуги - Клиника NewMe" />
+        <meta
+          property="og:description"
+          content="Клиника NewMe Health предлагает широкий спектр медицинских услуг в области пластической хирургии, бариатрии, стоматологии, пересадки волос и коррекции зрения. Узнайте больше о наших услугах."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newmealanya.com/services" />
+        <meta
+          property="og:image"
+          content="https://newmealanya.com/wp-content/uploads/breast-surgery-before-after.jpg" // змінити на актуальне фото
+        />
+
+        {/* метатеги Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Услуги - Клиника NewMe" />
+        <meta
+          name="twitter:description"
+          content="Клиника NewMe Health предлагает широкий спектр медицинских услуг в области пластической хирургии, бариатрии, стоматологии, пересадки волос и коррекции зрения. Узнайте больше о наших услугах."
+        />
+        <meta
+          name="twitter:image"
+          content="https://newmealanya.com/wp-content/uploads/breast-surgery-before-after.jpg"
+        />
+        <meta name="twitter:site" content="@NewMeAlanya" />
       </Head>
 
       <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
@@ -33,8 +57,6 @@ const ServicesPage = () => {
           />
         ))}
       </section>
-
-      {/* <h1 className={css.header}>Услуги</h1> */}
 
       <h2>Бариатрия</h2>
       <p>
@@ -60,7 +82,7 @@ const ServicesPage = () => {
         Наши специалисты по коррекции зрения предлагают передовые технологии и
         процедуры, чтобы улучшить ваше зрительное здоровье.
       </p>
-    </div>
+    </>
   );
 };
 
