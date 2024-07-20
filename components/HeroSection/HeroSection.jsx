@@ -3,7 +3,6 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import CallbackModal from "../CallbackModal/CallbackModal";
 import Button from "../Button/Button";
-import FloatingButton from "../FloatingButton/FloatingButton";
 import css from "./HeroSection.module.css";
 import con from "../../styles/container.module.css";
 
@@ -95,7 +94,6 @@ export const HeroSection = () => {
           />
         </div>
       </div>
-      <FloatingButton />
     </section>
   );
 };

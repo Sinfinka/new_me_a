@@ -3,10 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "../../schemas/validationSchema.js";
 import css from "./CallBackSection.module.css";
 import Button from "../Button/Button.jsx";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Link from "next/link.js";
-import Icon from "../icons.js";
 import TelegramLink from "../TelegramLink/TelegramLink.js";
 import WhatsAppLink from "../WhatsAppLink/WhatsAppLink.jsx";
 import ViberLink from "../ViberLink/ViberLink.jsx";
@@ -18,8 +16,8 @@ export function CallBackSection() {
   };
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log("Форма відправлена з секції", values);
-    toast.success("Форма успішно відправлена!");
+    console.log("Форма відправлена з секції в послугах", values);
+    toast.success("Сообщение отправлено. Вам позвонит консультант.");
     resetForm();
     setSubmitting(false);
   };

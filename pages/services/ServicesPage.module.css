@@ -6,7 +6,35 @@
 }
 
 .serviceCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  padding: 40px;
+  /* max-width: 1200px; */
+  width: 100%;
 }
+
+/* .serviceCard {
+  width: 288px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 375px) {
+}
+
+@media (min-width: 768px) {
+  .serviceCard {
+    width: 736px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .serviceCard {
+    width: 370px;
+  }
+} */
 
 /* .header {
 } */

@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
 import css from "./ServicesPage.module.css";
 import { services } from "../../db/services.js";
-
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import { CallBackSection } from "../../components/CallBackSection/CallBackSection.jsx";
+import { AchivSection } from "../../components/AchivSection/AchivSection.jsx";
 
 const ServicesPage = () => {
   return (
@@ -43,6 +43,7 @@ const ServicesPage = () => {
       </Head>
 
       <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
+      <AchivSection />
 
       <section className={css.serviceCard}>
         {services.map((service, index) => (
@@ -57,31 +58,7 @@ const ServicesPage = () => {
           />
         ))}
       </section>
-
-      <h2>Бариатрия</h2>
-      <p>
-        Мы специализируемся на бариатрической хирургии, которая помогает
-        пациентам достигать здоровья через потерю веса.
-      </p>
-
-      <h2>Стоматология</h2>
-      <p>
-        Наши стоматологи предлагают разнообразные стоматологические процедуры и
-        лечения.
-      </p>
-
-      <Link href={"/services/hair-transplant"}>Пересадка волос</Link>
-
-      <p>
-        Мы предоставляем услуги по пересадке волос, помогая вам восстановить и
-        улучшить вашу волосистость.
-      </p>
-
-      <h2>Коррекция зрения</h2>
-      <p>
-        Наши специалисты по коррекции зрения предлагают передовые технологии и
-        процедуры, чтобы улучшить ваше зрительное здоровье.
-      </p>
+      <CallBackSection />
     </>
   );
 };

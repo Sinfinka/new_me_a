@@ -33,8 +33,8 @@ const ServiceCard = ({
   };
 
   return (
-    <div>
-      <Card className={css.card}>
+    <div className={css.card}>
+      <Card>
         <CardMedia component="img" height="140" image={image} alt={title} />
         <CardContent className={css.cardContent}>
           <Typography className={css.modalTitle} variant="h5" component="div">

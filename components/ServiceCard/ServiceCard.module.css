@@ -1,6 +1,29 @@
 .card {
-  max-width: 345px;
   margin: 16px;
+}
+.card {
+  width: 288px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 375px) {
+  .card {
+    width: 343px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 736px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card {
+    width: 450px;
+    margin: 0;
+  }
 }
 
 .modal {
@@ -150,9 +173,9 @@
   }
 
   .modal .cardWrapperAll {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
   }
 
   .cardWrapper {
