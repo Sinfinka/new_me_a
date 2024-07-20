@@ -5,14 +5,14 @@
   background-repeat: no-repeat;
 }
 
-.serviceCard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-
-  padding: 40px;
-  /* max-width: 1200px; */
-  width: 100%;
+@media (min-width: 1440px) {
+  .serviceCard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 40px;
+    width: 100%;
+  }
 }
 
 /* .serviceCard {
