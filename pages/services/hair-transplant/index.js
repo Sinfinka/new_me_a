@@ -6,8 +6,14 @@ import css from "./HairTransplantPage.module.css";
 import Image from "next/image";
 import { CallBackSection } from "../../../components/CallBackSection/CallBackSection";
 import FloatingButton from "../../../components/FloatingButton/FloatingButton";
+import BreadcrumbsComponent from "../../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 
 export default function HairTransplantPage() {
+  const breadcrumbs = [
+    { label: "Главная", href: "/" },
+    { label: "Услуги", href: "/services" },
+    { label: "Пересадка волос" },
+  ];
   const images = ["/hair1.jpg", "/hair2.jpg", "/hair3.jpg"];
 
   return (
@@ -21,6 +27,7 @@ export default function HairTransplantPage() {
         {/* ЗМІНИТИ Open Graph и Twitter */}
       </Head>
 
+      <BreadcrumbsComponent paths={breadcrumbs} />
       <div>
         <PageMainSection
           additionalClass={css.hairMain}
