@@ -17,6 +17,7 @@
   --box-shadow: #592a0145;
   --text-blue: rgb(30, 116, 130);
   --color-blue: rgba(30, 117, 130, 0.485);
+  --color-blue-light: rgba(30, 117, 130, 0.181);
   --text-blue-hover: rgb(97, 200, 216);
   --lineal-gradient: linear-gradient(
     to left,
