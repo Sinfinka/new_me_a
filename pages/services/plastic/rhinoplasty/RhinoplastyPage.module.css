@@ -1,3 +1,10 @@
+.rhinoplastyMain {
+  background: url("/rhinoMain.jpg"), var(--background-color-white);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .imageWrapper {
   margin-bottom: 24px;
   width: 284px;
@@ -27,6 +34,38 @@
   color: var(--text-blue);
   background: var(--background-color-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.list li {
+  position: relative;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.list li::before {
+  content: "▶";
+  color: var(--text-blue);
+  font-size: 1.5em;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list li:hover {
+  background-color: var(--color-blue-light);
+}
+.listHeader {
+  margin-bottom: 24px;
 }
 
 @media (min-width: 375px) {

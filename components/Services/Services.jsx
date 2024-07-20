@@ -15,7 +15,7 @@ export function Services() {
           text={"Мамопластика. Изменение формы груди"}
           src={"/mamo.png"}
           alt={"Пластика груди"}
-          href={"/services/breast-surgery"}
+          href={"/services/plastic/breast-surgery"}
         />
         <ServicesCard
           text={"Терапия избыточного веса и сахарного диабета 2-го типа"}
@@ -27,7 +27,7 @@ export function Services() {
           text={"Ринопластика"}
           src={"/rino.jpg"}
           alt={"Ринопластика"}
-          href={"/services/rhinoplasty"}
+          href={"/services/plastic/rhinoplasty"}
         />
         <ServicesCard
           text={"Лечение зубов"}

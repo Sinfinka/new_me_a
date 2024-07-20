@@ -132,8 +132,7 @@ export default function HairTransplantPage() {
           textBtn={"Больше фото"}
         />
       </div>
-      <FloatingButton />
-      {/* <CallBackSection /> */}
+      <CallBackSection />
 
       {/* Дополнительные детали и описание процедур по пересадке волос */}
     </div>
