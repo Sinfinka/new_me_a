@@ -6,6 +6,7 @@ import { TextCard } from "../../../../components/TextCard/TextCard";
 import Image from "next/image";
 import { PhotoCard } from "../../../../components/PhotoCard/PhotoCard";
 import { CallBackSection } from "../../../../components/CallBackSection/CallBackSection";
+import YouTubeVideo from "../../../../components/YouTubeVideo/YouTubeVideo";
 
 export default function RhinoplastyPage() {
   const breadcrumbs = [
@@ -172,7 +173,8 @@ export default function RhinoplastyPage() {
           textBtn={"Больше фото"}
         />
       </div>
-      <CallBackSection />
+      <YouTubeVideo url={"https://www.youtube.com/embed/5WXyaph5fRE"} />
+      <CallBackSection className={css.rhino} classNameInput={css.inputRhino} />
     </div>
   );
 }

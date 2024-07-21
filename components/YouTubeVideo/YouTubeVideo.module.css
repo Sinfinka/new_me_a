@@ -1,0 +1,8 @@
+.section {
+  /* background-color: var(--background-color-white); */
+  background: var(--lineal-gradient);
+  text-align: center;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
