@@ -1,15 +1,15 @@
-.rhino {
+.mammo {
   background: none;
   background-color: var(--background-color-white);
   color: var(--text-blue);
 }
 /* Разобраться, как сделать два класа сразу  */
-.inputRhino {
+.inputMammo {
   background: rgba(42, 216, 255, 0.18);
 }
 
-.rhinoplastyMain {
-  background: url("/rhinoMain.jpg"), var(--background-color-white);
+.mammoplastyMain {
+  background: url("/mammoMain.jpg"), var(--background-color-white);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

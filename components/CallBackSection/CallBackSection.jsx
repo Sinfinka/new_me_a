@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "../../schemas/validationSchema.js";
 import css from "./CallBackSection.module.css";
+import clsx from "clsx";
 import Button from "../Button/Button.jsx";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +10,7 @@ import TelegramLink from "../TelegramLink/TelegramLink.js";
 import WhatsAppLink from "../WhatsAppLink/WhatsAppLink.jsx";
 import ViberLink from "../ViberLink/ViberLink.jsx";
 
-export function CallBackSection() {
+export function CallBackSection({ className, classNameInput }) {
   const initialValues = {
     name: "",
     phone: "",
@@ -23,8 +24,10 @@ export function CallBackSection() {
   };
 
   return (
-    <section className={css.callbackSection}>
-      <h2 className={css.header}>Консультация специалиста по телефону</h2>
+    <section className={clsx(css.callbackSection, className)}>
+      <h2 className={clsx(css.header, className)}>
+        Консультация специалиста по телефону
+      </h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -33,13 +36,13 @@ export function CallBackSection() {
         {({ isSubmitting }) => (
           <Form className={css.form}>
             <div className={css.formGroup}>
-              <label htmlFor="name" className={css.label}>
+              <label htmlFor="name" className={clsx(css.label, className)}>
                 Имя
               </label>
               <Field
                 type="text"
                 name="name"
-                className={css.input}
+                className={clsx(css.input, classNameInput)}
                 placeholder="Ваше имя"
               />
               <div className={css.errorWrapper}>
@@ -51,13 +54,13 @@ export function CallBackSection() {
               </div>
             </div>
             <div className={css.formGroup}>
-              <label htmlFor="phone" className={css.label}>
+              <label htmlFor="phone" className={clsx(css.label, className)}>
                 Телефон
               </label>
               <Field
                 type="text"
                 name="phone"
-                className={css.input}
+                className={clsx(css.input, classNameInput)}
                 placeholder="Ваш телефон"
               />
               <div className={css.errorWrapper}>
@@ -76,7 +79,7 @@ export function CallBackSection() {
           </Form>
         )}
       </Formik>
-      <p className={css.text}>
+      <p className={clsx(css.text, className)}>
         либо задайте вопрос в удобном для Вас мессенджере:
       </p>
       <div className={css.social}>
