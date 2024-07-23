@@ -15,7 +15,7 @@ export default function LipoSurgeryPage() {
     { label: "Пластическая хирургия", href: "/services/plastic" },
     { label: "Липосакция" },
   ];
-  const images = ["/lipo4.jpg", "/lipo3.jpg", "/lipo2.jpg", "/lipo1.jpg"];
+  const images = ["/lipo4.jpg", "/lipo3.jpg", "/lipo2.jpg"];
   return (
     <div>
       <Head>
@@ -160,7 +160,7 @@ export default function LipoSurgeryPage() {
           textBtn={"Больше фото"}
         />
       </div>
-      <YouTubeVideo url={"https://www.youtube.com/embed/5WXyaph5fRE"} />
+      <YouTubeVideo url={"https://www.youtube.com/embed/z6FjqTW0AZY"} />
       <CallBackSection className={css.rhino} classNameInput={css.inputRhino} />
     </div>
   );
