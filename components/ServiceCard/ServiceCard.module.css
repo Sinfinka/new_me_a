@@ -57,6 +57,7 @@
   border-radius: 14px;
   margin-top: 16px;
   margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.149);
 }
 
 .modal .modalLink {
@@ -189,6 +190,6 @@
 
   .image:hover,
   .image:focus {
-    scale: 1.01;
+    scale: 1.02;
   }
 }

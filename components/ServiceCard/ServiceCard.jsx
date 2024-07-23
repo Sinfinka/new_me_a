@@ -22,6 +22,7 @@ const ServiceCard = ({
   details,
   links,
   afterWords,
+  link,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -38,7 +39,9 @@ const ServiceCard = ({
         <CardMedia component="img" height="140" image={image} alt={title} />
         <CardContent className={css.cardContent}>
           <Typography className={css.modalTitle} variant="h5" component="div">
-            {title}
+            <Link className={css.modalTitle} href={link}>
+              {title}
+            </Link>
           </Typography>
           <Typography
             className={css.modalDesc}
@@ -79,23 +82,23 @@ const ServiceCard = ({
           >
             {details}
             <div className={css.cardWrapperAll}>
-              {links.map((link, index) => (
+              {links.map((serviceLink, index) => (
                 <div className={css.cardWrapper} key={index}>
-                  <Link className={css.modalLink} href={link.href}>
+                  <Link className={css.modalLink} href={serviceLink.href}>
                     <Image
-                      src={link.src}
-                      alt={link.alt}
+                      src={serviceLink.src}
+                      alt={serviceLink.alt}
                       className={css.image}
                       layout="responsive"
                       width={260}
                       height={170}
                     />
-                    {link.title}
+                    {serviceLink.title}
                   </Link>
-                  {link.description}
+                  {serviceLink.description}
                   <Button
                     className={css.modalBtn}
-                    onClick={() => handleClick(link.href)}
+                    onClick={() => handleClick(serviceLink.href)}
                     text={"Больше..."}
                   />
                 </div>
