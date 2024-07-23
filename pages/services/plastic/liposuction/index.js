@@ -15,7 +15,7 @@ export default function LipoSurgeryPage() {
     { label: "Пластическая хирургия", href: "/services/plastic" },
     { label: "Липосакция" },
   ];
-  const images = ["/rhino4.jpg", "/rhino3.jpg", "/rhino4.jpg", "/rhino3.jpg"];
+  const images = ["/lipo4.jpg", "/lipo3.jpg", "/lipo2.jpg", "/lipo1.jpg"];
   return (
     <div>
       <Head>
