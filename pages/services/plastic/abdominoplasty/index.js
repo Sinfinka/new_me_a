@@ -15,12 +15,7 @@ export default function AbdominoplastyPage() {
     { label: "Пластическая хирургия", href: "/services/plastic" },
     { label: "Абдоминопластика" },
   ];
-  const images = [
-    "/abdomino4.jpg",
-    "/abdomino3.jpg",
-    "/lipo2.jpg",
-    "/lipo1.jpg",
-  ];
+  const images = ["/abdomino4.jpg", "/abdomino3.jpg", "/lipo2.jpg"];
   return (
     <div>
       <Head>
@@ -167,7 +162,7 @@ export default function AbdominoplastyPage() {
           textBtn={"Больше фото"}
         />
       </div>
-      <YouTubeVideo url={"https://www.youtube.com/embed/5WXyaph5fRE"} />
+      <YouTubeVideo url={"https://www.youtube.com/embed/z6FjqTW0AZY"} />
       <CallBackSection
         className={css.abdomino}
         classNameInput={css.inputAbdomino}
