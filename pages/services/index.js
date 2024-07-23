@@ -5,6 +5,7 @@ import { services } from "../../db/services.js";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { CallBackSection } from "../../components/CallBackSection/CallBackSection.jsx";
 import { AchivSection } from "../../components/AchivSection/AchivSection.jsx";
+import Link from "next/link.js";
 
 const ServicesPage = () => {
   return (
@@ -48,6 +49,7 @@ const ServicesPage = () => {
       <section className={css.serviceCard}>
         {services.map((service, index) => (
           <ServiceCard
+            link={service.link}
             key={index}
             title={service.title}
             description={service.description}
@@ -58,6 +60,7 @@ const ServicesPage = () => {
           />
         ))}
       </section>
+
       <CallBackSection />
     </>
   );

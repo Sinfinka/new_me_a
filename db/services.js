@@ -2,6 +2,7 @@ export const services = [
   // Пластическая хирургия
   {
     title: "Пластическая хирургия",
+    link: "/services/plastic",
     description:
       "NewMe Health Clinic предлагает широкий спектр медицинских услуг в области пластической хирургии. Узнайте больше о наших услугах.",
     image: "/plastic1.jpg",
@@ -96,6 +97,7 @@ export const services = [
   //Баритрия
   {
     title: "Бариатрическая хирургия",
+    link: "/services/bariatric",
     description:
       "Широкий спектр медицинских услуг в области бариатрической хирургии, направленных на снижение веса и эффективную борьбу с диабетом 2 типа. Узнайте больше о наших услугах.",
     image: "/bariatric1.png",
@@ -144,6 +146,7 @@ export const services = [
 
   {
     title: "Стоматология",
+    link: "/services/dentistry",
     description:
       "NewMe Health Clinic предлагает широкий спектр медицинских услуг в области стоматологии. Узнайте больше о наших услугах.",
     image: "/dental2.jpg",
@@ -205,6 +208,7 @@ export const services = [
   //Корекция зрения
   {
     title: "Коррекция зрения",
+    link: "/services/vision-correction",
     description:
       "NewMe Health Clinic предлагает медицинские решения в области коррекции зрения, направленные на улучшение вашего зрения и качества жизни. Узнайте больше о наших услугах и методах.",
     image: "/eyes1.jpg",
@@ -260,6 +264,7 @@ export const services = [
 
   {
     title: "Пересадка волос",
+    link: "/services/hair-transplant",
     description:
       "NewMe Health Clinic предоставляет инновационные методы пересадки волос для достижения естественных и долговременных результатов. Узнайте больше о наших услугах и преимуществах.",
     image: "/hair.jpg",
