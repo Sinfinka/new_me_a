@@ -1,6 +1,7 @@
 import Head from "next/head";
 import css from "./ArticlesPage.module.css";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
+import { CallBackSection } from "../../components/CallBackSection/CallBackSection.jsx";
 
 export default function ArticlesPage() {
   return (
@@ -19,6 +20,7 @@ export default function ArticlesPage() {
       <p>
         Здесь будет список полезных статей и новостей о медицине и здоровье.
       </p>
+      <CallBackSection />
     </div>
   );
 }

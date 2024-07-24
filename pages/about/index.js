@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { CallBackSection } from "../../components/CallBackSection/CallBackSection";
 
 const AboutPage = () => {
   return (
@@ -32,6 +33,8 @@ const AboutPage = () => {
           помочь вам.
         </p>
       </div>
+
+      <CallBackSection />
     </div>
   );
 };

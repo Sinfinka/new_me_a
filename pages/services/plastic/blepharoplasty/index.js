@@ -16,10 +16,10 @@ export default function BlepharoplastyPage() {
     { label: "Блефаропластика" },
   ];
   const images = [
-    "/abdomino4.jpg",
-    "/abdomino3.jpg",
-    "/lipo2.jpg",
-    "/lipo1.jpg",
+    "/blepharo6.jpg",
+    "/blepharo4.jpg",
+    "/blepharo5.jpg",
+    "/blepharo7.jpg",
   ];
   return (
     <div>
@@ -161,7 +161,7 @@ export default function BlepharoplastyPage() {
         />
       </div>
 
-      <YouTubeVideo url={"https://www.youtube.com/embed/z6FjqTW0AZY"} />
+      <YouTubeVideo url={"https://www.youtube.com/embed/XXOc4R1Hj2Q"} />
       <CallBackSection
         className={css.blepharo}
         classNameInput={css.inputBlepharo}

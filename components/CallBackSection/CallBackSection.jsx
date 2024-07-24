@@ -17,7 +17,7 @@ export function CallBackSection({ className, classNameInput }) {
   };
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log("Форма відправлена з секції в послугах", values);
+    console.log("Форма відправлена з секції", values);
     toast.success("Сообщение отправлено. Вам позвонит консультант.");
     resetForm();
     setSubmitting(false);
