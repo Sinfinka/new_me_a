@@ -15,7 +15,7 @@ export default function BllPage() {
     { label: "Пластическая хирургия", href: "/services/plastic" },
     { label: "Подтяжка ягодиц" },
   ];
-  const images = ["/facelift3.jpg", "/facelift3.jpg"];
+  const images = [];
   return (
     <div>
       <Head>
@@ -43,7 +43,7 @@ export default function BllPage() {
         <div className={css.imageWrapper}>
           <Image
             src={"/bll.jpg"}
-            alt={"facelift"}
+            alt={"bll"}
             className={css.image}
             layout="responsive"
             width={696}
