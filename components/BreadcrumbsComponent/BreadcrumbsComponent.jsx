@@ -3,12 +3,13 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
+import css from "./BreadcrumbsComponent.module.css";
 
 const BreadcrumbsComponent = ({ paths }) => {
   const router = useRouter();
 
   return (
-    <Breadcrumbs aria-label="breadcrumb">
+    <Breadcrumbs className={css.breadcrumbs} aria-label="breadcrumb">
       {paths.map((path, index) => (
         <React.Fragment key={index}>
           {index < paths.length - 1 ? (

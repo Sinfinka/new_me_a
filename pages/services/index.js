@@ -5,9 +5,10 @@ import { services } from "../../db/services.js";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { CallBackSection } from "../../components/CallBackSection/CallBackSection.jsx";
 import { AchivSection } from "../../components/AchivSection/AchivSection.jsx";
-import Link from "next/link.js";
+import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
 
 const ServicesPage = () => {
+  const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Услуги" }];
   return (
     <>
       <Head>
@@ -44,6 +45,7 @@ const ServicesPage = () => {
       </Head>
 
       <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
+      <BreadcrumbsComponent paths={breadcrumbs} />
       <AchivSection />
 
       <section className={css.serviceCard}>
