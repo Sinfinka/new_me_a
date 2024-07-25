@@ -4,3 +4,46 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.articlesContent {
+  padding: 20px;
+  text-align: center;
+}
+
+.upcomingArticles {
+  margin-top: 40px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.upcomingArticles h2 {
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.upcomingArticles p {
+  margin-bottom: 20px;
+}
+
+.upcomingArticles a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.upcomingArticles a:hover {
+  text-decoration: underline;
+}
+
+.imagePlaceholder {
+  margin-top: 20px;
+}
+
+.imagePlaceholder img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
