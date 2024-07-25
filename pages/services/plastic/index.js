@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BreadcrumbsComponent from "../../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 import { PageMainSection } from "../../../components/PageMainSection/PageMainSection";
-import css from "./PlasticSurgeryPge.module.css";
+import css from "./PlasticSurgeryPage.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "../../../db/services.js";

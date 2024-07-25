@@ -44,8 +44,8 @@ const ServicesPage = () => {
         <meta name="twitter:site" content="@NewMeAlanya" />
       </Head>
 
-      <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
       <BreadcrumbsComponent paths={breadcrumbs} />
+      <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
       <AchivSection />
 
       <section className={css.serviceCard}>

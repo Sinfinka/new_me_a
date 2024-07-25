@@ -2,8 +2,19 @@
 import Head from "next/head";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
 import css from "./PricesPage.module.css";
+import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent";
+import PricesTable from "../../components/PriceTable/PriceTable";
 
 export default function PricesPage() {
+  const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Цены " }];
+
+  const categories = [
+    { key: "plasticSurgery", title: "Пластическая хирургия" },
+    { key: "bariatricSurgery", title: "Бариатрическая хирургия" },
+    { key: "dentistry", title: "Стоматология" },
+    { key: "visionCorrection", title: "Коррекция зрения" },
+    { key: "hairTransplant", title: "Трансплантация волос" },
+  ];
   return (
     <div>
       <Head>
@@ -14,10 +25,10 @@ export default function PricesPage() {
         />
         {/* ЗМІНИТИ  метатеги Open Graph и Twitter  */}
       </Head>
-
+      <BreadcrumbsComponent paths={breadcrumbs} />
       <PageMainSection additionalClass={css.pricesMain} header={"Цены"} />
-      <h1>Цены</h1>
-      <p>Здесь будет информация о ценах на наши медицинские услуги.</p>
+
+      <PricesTable categories={categories} />
     </div>
   );
 }
