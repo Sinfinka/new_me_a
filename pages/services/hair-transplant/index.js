@@ -7,6 +7,7 @@ import Image from "next/image";
 import { CallBackSection } from "../../../components/CallBackSection/CallBackSection";
 import FloatingButton from "../../../components/FloatingButton/FloatingButton";
 import BreadcrumbsComponent from "../../../components/BreadcrumbsComponent/BreadcrumbsComponent";
+import YouTubeVideo from "../../../components/YouTubeVideo/YouTubeVideo";
 
 export default function HairTransplantPage() {
   const breadcrumbs = [
@@ -26,7 +27,6 @@ export default function HairTransplantPage() {
         />
         {/* ЗМІНИТИ Open Graph и Twitter */}
       </Head>
-
       <BreadcrumbsComponent paths={breadcrumbs} />
       <div>
         <PageMainSection
@@ -132,6 +132,8 @@ export default function HairTransplantPage() {
           textBtn={"Больше фото"}
         />
       </div>
+
+      <YouTubeVideo url={"https://www.youtube.com/embed/dB2RkClaWec"} />
       <CallBackSection />
 
       {/* Дополнительные детали и описание процедур по пересадке волос */}
