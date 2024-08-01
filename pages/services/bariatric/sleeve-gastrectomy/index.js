@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import BreadcrumbsComponent from "../../../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 import { PageMainSection } from "../../../../components/PageMainSection/PageMainSection";
@@ -7,6 +8,7 @@ import YouTubeVideo from "../../../../components/YouTubeVideo/YouTubeVideo";
 import { PhotoCard } from "../../../../components/PhotoCard/PhotoCard";
 import Image from "next/image";
 import { TextCard } from "../../../../components/TextCard/TextCard";
+import BMIModal from "../../../../components/BMIModal/BMIModal";
 
 export default function SleeveGastrectomyPage() {
   const breadcrumbs = [
@@ -16,6 +18,16 @@ export default function SleeveGastrectomyPage() {
     { label: "Рукавная резекция желудка" },
   ];
   const images = ["/sleeve4.jpg", "/sleeve3.jpg", "/sleeve5.jpg"];
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   return (
     <div>
       <Head>
@@ -55,12 +67,16 @@ export default function SleeveGastrectomyPage() {
         <p className={css.textCard}>
           Эта процедура рекомендуется пациентам с индексом массы тела (ИМТ) 40 и
           выше, или с ИМТ 35 и выше при наличии сопутствующих заболеваний,
-          связанных с ожирением, таких как диабет 2-го типа. <br /> Перед
-          операцией проводится тщательное медицинское обследование, включающее
-          анализы крови, ЭКГ и эндоскопию, чтобы убедиться в отсутствии
-          противопоказаний. Пациент также получает полное консультирование с
-          хирургом и диетологом о подготовке к операции, ее ходе и
-          реабилитационном периоде. <br /> Операция проводится под общей
+          связанных с ожирением, таких как диабет 2-го типа.
+          <button className={css.btn} onClick={openModal}>
+            Рассчитать ИМТ
+          </button>
+          <br />
+          Перед операцией проводится тщательное медицинское обследование,
+          включающее анализы крови, ЭКГ и эндоскопию, чтобы убедиться в
+          отсутствии противопоказаний. Пациент также получает полное
+          консультирование с хирургом и диетологом о подготовке к операции, ее
+          ходе и реабилитационном периоде. <br /> Операция проводится под общей
           анестезией. Через несколько небольших разрезов в брюшной полости
           вводятся лапароскоп и хирургические инструменты. Хирург удаляет часть
           желудка. После удаления разрезы закрываются. Пациент остается под
@@ -169,6 +185,7 @@ export default function SleeveGastrectomyPage() {
         className={css.sleeve}
         classNameInput={css.inputSleeve}
       />
+      <BMIModal isOpen={modalIsOpen} onRequestClose={closeModal} />
     </div>
   );
 }
