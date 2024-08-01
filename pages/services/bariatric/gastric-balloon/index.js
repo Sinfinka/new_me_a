@@ -171,8 +171,8 @@ export default function GastricBallonPage() {
       </div>
       <YouTubeVideo url={"https://www.youtube.com/embed/FK7XNQ2EOBg"} />
       <CallBackSection
-        className={css.abdomino}
-        classNameInput={css.inputAbdomino}
+        className={css.gastric}
+        classNameInput={css.inputGastric}
       />
     </div>
   );
