@@ -104,7 +104,7 @@ export default function SleeveGastrectomyPage() {
       <div className={css.wrapper}>
         <div className={css.imageWrapper}>
           <Image
-            src={"/sleeve2.jpg"}
+            src={"/abdominoWo.jpg"}
             alt={"lipo"}
             className={css.image}
             layout="responsive"
