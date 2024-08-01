@@ -24,7 +24,9 @@ const BreadcrumbsComponent = ({ paths }) => {
               {path.label}
             </Link>
           ) : (
-            <Typography color="text.primary">{path.label}</Typography>
+            <Typography color="text.primary" className={css.currentPage}>
+              {path.label}
+            </Typography>
           )}
         </React.Fragment>
       ))}
