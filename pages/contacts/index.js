@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
-import Page from "../../components/ServerSideProps/ServerSideProps";
 
 export default function Contacts() {
   // const [form, setForm] = useState({
@@ -105,7 +103,6 @@ export default function Contacts() {
         <a href="https://twitter.com">Twitter</a> |{" "}
         <a href="https://instagram.com">Instagram</a>
       </p>
-      <Page />
     </div>
   );
 }
