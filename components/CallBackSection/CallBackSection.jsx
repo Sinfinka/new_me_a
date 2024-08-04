@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Button from "../Button/Button.jsx";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 import TelegramLink from "../TelegramLink/TelegramLink.js";
 import WhatsAppLink from "../WhatsAppLink/WhatsAppLink.jsx";
 import ViberLink from "../ViberLink/ViberLink.jsx";
@@ -16,11 +17,28 @@ export function CallBackSection({ className, classNameInput }) {
     phone: "",
   };
 
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log("Форма відправлена з секції", values);
-    toast.success("Сообщение отправлено. Вам позвонит консультант.");
-    resetForm();
-    setSubmitting(false);
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      const jsonData = JSON.stringify(values);
+      console.log("Форма відправлена з секції", jsonData);
+
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/sendEmail`,
+        jsonData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      toast.success("Сообщение отправлено. Вам позвонит консультант.");
+    } catch (error) {
+      console.error("Помилка при відправці даних:", error);
+      toast.error("Ошибка при отправке данных. Попробуйте еще раз.");
+    } finally {
+      resetForm();
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -89,9 +107,9 @@ export function CallBackSection({ className, classNameInput }) {
         <div className={css.whatsAppLink}>
           <WhatsAppLink />
         </div>
-        <divc className={css.viberLink}>
+        <div className={css.viberLink}>
           <ViberLink />
-        </divc>
+        </div>
       </div>
     </section>
   );
