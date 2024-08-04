@@ -4,8 +4,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import PhoneInput from "react-phone-number-input";
 import Button from "../Button/Button";
 import { validationSchema } from "../../schemas/validationSchema";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
+const CallbackModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
   const backdropRef = useRef(null);
 
@@ -42,84 +45,106 @@ const CallbackModal = ({ isOpen, onClose, onSubmit }) => {
     phone: "",
   };
 
-  const handleSubmit = (values, { setSubmitting }) => {
-    onSubmit(values, { setSubmitting });
-    setSubmitting(false);
-    onClose();
+  const handleSubmit = async (values, { setSubmitting }) => {
+    try {
+      const jsonData = JSON.stringify(values);
+      console.log("Дані для відправки:", jsonData);
+
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/sendEmail`,
+        jsonData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      toast.success("Ваши данные отправлены. С Вами свяжутся.");
+    } catch (error) {
+      console.error("Ошибка при отправке данных:", error);
+      toast.error("Ошибка при отправке данных. Попробуйте еще раз.");
+    } finally {
+      setSubmitting(false);
+      onClose();
+    }
   };
 
   return (
-    <div ref={backdropRef} className={css.modalBackdrop}>
-      <div ref={modalRef} className={css.modal}>
-        <div className={css.modalHeader}>
-          <h5 className={css.modalTitle}>Обратный звонок</h5>
-          <button type="button" className={css.closeButton} onClick={onClose}>
-            &times;
-          </button>
-        </div>
-        <div className={css.modalBody}>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            {({ isSubmitting, values }) => (
-              <Form>
-                <div className={css.formGroup}>
-                  <label className={css.label} htmlFor="name">
-                    Имя
-                  </label>
-                  <Field
-                    type="text"
-                    className={css.inputField}
-                    id="name"
-                    name="name"
-                    placeholder="Ваше имя"
-                  />
-                  <ErrorMessage
-                    name="name"
-                    component="div"
-                    className={css.textDanger}
-                  />
-                </div>
-                <div className={css.formGroup}>
-                  <label className={css.label} htmlFor="phone">
-                    Телефон
-                  </label>
-                  <Field name="phone">
-                    {({ field, form }) => (
-                      <PhoneInput
-                        {...field}
-                        id="phone"
-                        name="phone"
-                        placeholder="Ваш телефон"
-                        className={css.customPhone}
-                        onChange={(value) => form.setFieldValue("phone", value)}
-                      />
-                    )}
-                  </Field>
-                  <div className={css.phoneNumberDisplay}>
-                    <p>Проверте Ваш номер телефона: {values.phone}</p>
+    <>
+      <div ref={backdropRef} className={css.modalBackdrop}>
+        <div ref={modalRef} className={css.modal}>
+          <div className={css.modalHeader}>
+            <h5 className={css.modalTitle}>Обратный звонок</h5>
+            <button type="button" className={css.closeButton} onClick={onClose}>
+              &times;
+            </button>
+          </div>
+          <div className={css.modalBody}>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit}
+            >
+              {({ isSubmitting, values }) => (
+                <Form>
+                  <div className={css.formGroup}>
+                    <label className={css.label} htmlFor="name">
+                      Имя
+                    </label>
+                    <Field
+                      type="text"
+                      className={css.inputField}
+                      id="name"
+                      name="name"
+                      placeholder="Ваше имя"
+                    />
+                    <ErrorMessage
+                      name="name"
+                      component="div"
+                      className={css.textDanger}
+                    />
                   </div>
-                  <ErrorMessage
-                    name="phone"
-                    component="div"
-                    className={css.textDanger}
-                  />
-                </div>
-                <div className={css.modalFooter}>
-                  <Button
-                    text="Позвоните мне"
-                    type="submit"
-                    disabled={isSubmitting}
-                  />
-                </div>
-              </Form>
-            )}
-          </Formik>
+                  <div className={css.formGroup}>
+                    <label className={css.label} htmlFor="phone">
+                      Телефон
+                    </label>
+                    <Field name="phone">
+                      {({ field, form }) => (
+                        <PhoneInput
+                          {...field}
+                          id="phone"
+                          name="phone"
+                          placeholder="Ваш телефон"
+                          className={css.customPhone}
+                          onChange={(value) =>
+                            form.setFieldValue("phone", value)
+                          }
+                        />
+                      )}
+                    </Field>
+                    <div className={css.phoneNumberDisplay}>
+                      <p>Проверте Ваш номер телефона: {values.phone}</p>
+                    </div>
+                    <ErrorMessage
+                      name="phone"
+                      component="div"
+                      className={css.textDanger}
+                    />
+                  </div>
+                  <div className={css.modalFooter}>
+                    <Button
+                      text="Позвоните мне"
+                      type="submit"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                </Form>
+              )}
+            </Formik>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

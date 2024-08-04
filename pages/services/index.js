@@ -1,13 +1,13 @@
 import Head from "next/head";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
 import css from "./ServicesPage.module.css";
-import { services } from "../../db/services.js";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { CallBackSection } from "../../components/CallBackSection/CallBackSection.jsx";
 import { AchivSection } from "../../components/AchivSection/AchivSection.jsx";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
+import { fetchServices } from "../api/api.js";
 
-const ServicesPage = () => {
+const ServicesPage = ({ services }) => {
   const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Услуги" }];
   return (
     <>
@@ -67,5 +67,23 @@ const ServicesPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const services = await fetchServices();
+    return {
+      props: {
+        services,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      props: {
+        services: [],
+      },
+    };
+  }
+}
 
 export default ServicesPage;

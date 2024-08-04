@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { CallBackSection } from "../../components/CallBackSection/CallBackSection";
+import { fetchServices } from "../api/api";
 
-const AboutPage = () => {
+const AboutPage = ({ services }) => {
   return (
     <div>
       <Head>
@@ -10,7 +11,31 @@ const AboutPage = () => {
           name="description"
           content="NewMe Health Clinic предлагает высококачественные медицинские услуги в сотрудничестве с ведущими больницами и клиниками. Узнайте больше о наших услугах и нашей команде."
         />
-        {/* ЗМІНИТИ  метатеги Open Graph и Twitter  */}
+        {/* метатеги Open Graph */}
+        <meta property="og:title" content="О нас - NewMe Health Clinic" />
+        <meta
+          property="og:description"
+          content="NewMe Health Clinic предлагает высококачественные медицинские услуги в сотрудничестве с ведущими больницами и клиниками. Узнайте больше о наших услугах и нашей команде."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newmealanya.com/about" />
+        <meta
+          property="og:image"
+          content="https://newmealanya.com/wp-content/uploads/about-us-image.jpg" // змініть на актуальне фото
+        />
+
+        {/* метатеги Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="О нас - NewMe Health Clinic" />
+        <meta
+          name="twitter:description"
+          content="NewMe Health Clinic предлагает высококачественные медицинские услуги в сотрудничестве с ведущими больницами и клиниками. Узнайте больше о наших услугах и нашей команде."
+        />
+        <meta
+          name="twitter:image"
+          content="https://newmealanya.com/wp-content/uploads/about-us-image.jpg" // змініть на актуальне фото
+        />
+        <meta name="twitter:site" content="@NewMeAlanya" />
       </Head>
       <div>
         <h1>О нас</h1>
@@ -33,10 +58,35 @@ const AboutPage = () => {
           помочь вам.
         </p>
       </div>
-
+      <section>
+        <h2>Наши услуги</h2>
+        <ul>
+          {services.map((service, index) => (
+            <li key={index}>{service.title}</li>
+          ))}
+        </ul>
+      </section>
       <CallBackSection />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const services = await fetchServices();
+    return {
+      props: {
+        services,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      props: {
+        services: [],
+      },
+    };
+  }
+}
 
 export default AboutPage;
