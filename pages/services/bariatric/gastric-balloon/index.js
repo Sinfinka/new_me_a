@@ -15,7 +15,7 @@ export default function GastricBallonPage() {
     { label: "Бариатрическая хирургия", href: "/services/bariatric" },
     { label: "Желудочный баллон" },
   ];
-  const images = ["/abdomino4.jpg", "/abdomino3.jpg", "/lipo2.jpg"];
+  const images = ["/ballon1.jpg", "/ballon2.jpg", "/ballon3.jpg"];
   return (
     <div>
       <Head>
