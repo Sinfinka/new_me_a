@@ -75,6 +75,30 @@
   gap: 16px;
 }
 
+.ank {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--text-blue);
+  cursor: pointer;
+  background-color: var(--color-blue-light);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.ank:hover,
+.ank:focus {
+  color: var(--text-blue-hover);
+  background-color: var(--text-color);
+}
+
+.ankText {
+  font-size: 12px;
+  padding: 10px 8px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--text-blue);
+  background-color: var(--background-color);
+}
+
 @media (min-width: 375px) {
   .callbackSection {
     margin-left: 24px;
@@ -109,6 +133,10 @@
   .whatsAppLink {
     width: 100px;
     height: 100px;
+  }
+
+  .ankText {
+    font-size: 14px;
   }
 }
 
@@ -161,6 +189,10 @@
   .telegramLink:hover,
   .whatsAppLink:hover {
     transform: scale(1.1);
+  }
+
+  .ankText {
+    font-size: 20px;
   }
 }
 
