@@ -66,10 +66,11 @@
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.inputField:hover,
 .inputField:focus {
   outline: 0;
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: var(--text-blue);
+  box-shadow: 0 0 0 0.2rem var(--color-blue-light);
 }
 
 .textDanger {
@@ -124,12 +125,39 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.customPhone :global(.PhoneInputInput:hover) {
+  outline: 0;
+  border-color: var(--text-blue);
+  box-shadow: 0 0 0 0.2rem var(--color-blue-light);
+}
 .customPhone :global(.PhoneInputInput:focus) {
   outline: 0;
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: var(--text-blue);
+  box-shadow: 0 0 0 0.2rem var(--color-blue-light);
 }
-
 .modalFooter {
   text-align: center;
+}
+
+.ank {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--text-blue);
+  cursor: pointer;
+  background-color: var(--color-blue-light);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.ank:hover,
+.ank:focus {
+  color: var(--text-blue-hover);
+  background-color: var(--text-color);
+}
+
+.text {
+  padding: 10px 8px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--text-blue);
+  background-color: var(--background-color);
 }

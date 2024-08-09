@@ -10,6 +10,7 @@ import axios from "axios";
 import TelegramLink from "../TelegramLink/TelegramLink.js";
 import WhatsAppLink from "../WhatsAppLink/WhatsAppLink.jsx";
 import ViberLink from "../ViberLink/ViberLink.jsx";
+import Link from "next/link.js";
 
 export function CallBackSection({ className, classNameInput }) {
   const initialValues = {
@@ -111,6 +112,20 @@ export function CallBackSection({ className, classNameInput }) {
           <ViberLink />
         </div>
       </div>
+      {/* <p className={css.ankText}>
+        Так же Вы можете сразу заполнить
+        <Link
+          href="https://forms.gle/YKFY3KG8NFe3Skk5A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <strong className={css.ank}> анкету </strong>
+        </Link>
+        , <br />
+        что позволит нашему специалисту предоставить Вам более подробную
+        консультацию.
+      </p> */}
     </section>
   );
 }

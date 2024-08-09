@@ -7,6 +7,7 @@ import { validationSchema } from "../../schemas/validationSchema";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
 
 const CallbackModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
@@ -97,6 +98,7 @@ const CallbackModal = ({ isOpen, onClose }) => {
                       id="name"
                       name="name"
                       placeholder="Ваше имя"
+                      autoFocus
                     />
                     <ErrorMessage
                       name="name"
@@ -141,6 +143,20 @@ const CallbackModal = ({ isOpen, onClose }) => {
                 </Form>
               )}
             </Formik>
+            <p className={css.text}>
+              Так же Вы можете сразу заполнить
+              <Link
+                href="https://forms.gle/YKFY3KG8NFe3Skk5A"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                <strong className={css.ank}> анкету </strong>
+              </Link>
+              , <br />
+              что позволит нашему специалисту предоставить Вам более подробную
+              консультацию.
+            </p>
           </div>
         </div>
       </div>

@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import Router from "next/router";
 import Loader from "../components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
+import Script from "next/script";
 
 function App({ Component, pageProps }) {
-  const [loading, setLoading] = useState(true); // Початковий стан - true
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleStart = () => setLoading(true);
@@ -27,6 +28,23 @@ function App({ Component, pageProps }) {
 
   return (
     <>
+      {/* Google Analytics */}
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+          `,
+        }}
+      />
       {loading ? (
         <Loader />
       ) : (
