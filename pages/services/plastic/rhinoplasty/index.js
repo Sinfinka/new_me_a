@@ -173,7 +173,7 @@ export default function RhinoplastyPage() {
           textBtn={"Больше фото"}
         />
       </div>
-      <YouTubeVideo url={"https://www.youtube.com/embed/5WXyaph5fRE"} />
+      <YouTubeVideo url={"https://www.youtube.com/embed/z6FjqTW0AZY"} />
       <CallBackSection className={css.rhino} classNameInput={css.inputRhino} />
     </div>
   );
