@@ -16,6 +16,11 @@ const LanguageSwitcher = ({ isInFooter }) => {
     //   router.push(pathname, pathname, { locale: "ru" });
   };
 
+  const switchToUkrainian = () => {
+    console.log("ua click");
+    //   router.push(pathname, pathname, { locale: "ru" });
+  };
+
   return (
     <div className={clsx(css.languageSwitcher, { [css.inFooter]: isInFooter })}>
       <button
@@ -38,7 +43,7 @@ const LanguageSwitcher = ({ isInFooter }) => {
         className={clsx(css.languageButton, {
           [css.active]: router.locale === "ua",
         })}
-        onClick={switchToEnglish}
+        onClick={switchToUkrainian}
       >
         Ua
       </button>

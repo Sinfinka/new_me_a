@@ -216,7 +216,7 @@ export default function BreastPlasticSurgeryPage() {
         />
       </section>
 
-      <YouTubeVideo url={"https://www.youtube.com/embed/BxGBUiRz3Nk"} />
+      <YouTubeVideo url={"https://www.youtube.com/embed/z6FjqTW0AZY"} />
       <CallBackSection className={css.mammo} classNameInput={css.inputMammo} />
     </div>
   );

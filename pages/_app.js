@@ -5,6 +5,7 @@ import Router from "next/router";
 import Loader from "../components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import Script from "next/script";
+import Head from "next/head";
 
 function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,10 @@ function App({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        {/* фавікон */}
+        <link rel="icon" href="/favicon1.png" />
+      </Head>
       {/* Google Analytics */}
       <Script
         async
