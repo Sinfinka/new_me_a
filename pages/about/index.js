@@ -1,8 +1,34 @@
 import Head from "next/head";
 import { CallBackSection } from "../../components/CallBackSection/CallBackSection";
 import { fetchServices } from "../api/api";
+import css from "./AboutPage.module.css";
+import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent";
+import { useState } from "react";
+import clsx from "clsx";
+import Link from "next/link";
 
 const AboutPage = ({ services }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  // Бажаний порядок
+  const desiredOrder = [
+    "Бариатрическая хирургия",
+    "Пластическая хирургия",
+    "Стоматология",
+    "Пересадка волос",
+    "Коррекция зрения",
+  ];
+
+  const sortedServices = services.sort((a, b) => {
+    return desiredOrder.indexOf(a.title) - desiredOrder.indexOf(b.title);
+  });
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "О нас" }];
+
   return (
     <div>
       <Head>
@@ -37,7 +63,16 @@ const AboutPage = ({ services }) => {
         />
         <meta name="twitter:site" content="@NewMeAlanya" />
       </Head>
-      <div>
+      <BreadcrumbsComponent paths={breadcrumbs} />
+      {/* Герой-блок */}
+      <section className={css.heroSection}>
+        <div className={css.heroContent}>
+          <h1>Добро пожаловать в NewMe Health Clinic</h1>
+          <p>Ваш путь к здоровью начинается здесь</p>
+        </div>
+      </section>
+
+      <div className={css.aboutContent}>
         <h1>О нас</h1>
         <p>
           В NewMe Health Clinic мы стремимся предоставлять высококачественные
@@ -58,14 +93,37 @@ const AboutPage = ({ services }) => {
           помочь вам.
         </p>
       </div>
-      <section>
+      <section className={css.servicesSection}>
         <h2>Наши услуги</h2>
         <ul>
-          {services.map((service, index) => (
-            <li key={index}>{service.title}</li>
+          {sortedServices.map((service, index) => (
+            <li key={service.id} className={css.serviceItem}>
+              <div
+                className={css.serviceTitle}
+                onClick={() => toggleAccordion(index)}
+              >
+                <h3>{service.title}</h3>
+              </div>
+              {activeIndex === index && (
+                <div className={css.serviceContent}>
+                  <p>{service.description}</p>
+                  {service.link && (
+                    <Link
+                      href={service.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      passHref
+                    >
+                      Подробнее...
+                    </Link>
+                  )}
+                </div>
+              )}
+            </li>
           ))}
         </ul>
       </section>
+
       <CallBackSection />
     </div>
   );
