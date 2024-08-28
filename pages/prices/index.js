@@ -1,11 +1,11 @@
-// pages/prices.js
+import { fetchPrices } from "../api/api.js";
 import Head from "next/head";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
 import css from "./PricesPage.module.css";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent";
-import PricesTable from "../../components/PriceTable/PriceTable";
+import PricesTable from "../../components/PricesTable/PricesTable.jsx";
 
-export default function PricesPage() {
+export default function PricesPage({ prices }) {
   const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Цены " }];
 
   const categories = [
@@ -27,8 +27,26 @@ export default function PricesPage() {
       </Head>
       <BreadcrumbsComponent paths={breadcrumbs} />
       <PageMainSection additionalClass={css.pricesMain} header={"Цены"} />
-
-      <PricesTable categories={categories} />
+      <PricesTable categories={categories} prices={prices} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const prices = await fetchPrices();
+
+    return {
+      props: {
+        prices,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      props: {
+        prices: [],
+      },
+    };
+  }
 }

@@ -1,4 +1,3 @@
-import Button from "../Button/Button";
 import LinkButton from "../LinkButton/LinkButton";
 import css from "./ServicesCard.module.css";
 import Image from "next/image";

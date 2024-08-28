@@ -8,6 +8,8 @@ import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/Breadcru
 import { fetchServices } from "../api/api.js";
 
 const ServicesPage = ({ services }) => {
+  console.log(services);
+
   const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Услуги" }];
   return (
     <>
