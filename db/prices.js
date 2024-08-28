@@ -74,7 +74,7 @@ export const prices = {
     },
     {
       name: "Реконструкция носа",
-      price: "370 евро",
+      price: "3700 евро",
     },
   ],
   bariatricSurgery: [
