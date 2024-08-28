@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "../../../db/services.js";
+import { services } from "../../../db/services";
 import { CallBackSection } from "../../../components/CallBackSection/CallBackSection";
 import { PageMainSection } from "../../../components/PageMainSection/PageMainSection";
 import BreadcrumbsComponent from "../../../components/BreadcrumbsComponent/BreadcrumbsComponent";
