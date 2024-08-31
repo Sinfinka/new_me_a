@@ -27,7 +27,7 @@ export default function GastricBallonPage() {
       <BreadcrumbsComponent paths={breadcrumbs} />
 
       <PageMainSection
-        additionalClass={css.rhinoplastyMain}
+        additionalClass={css.gastricMain}
         header={"Желудочный баллон"}
         src={"/gastricMain.jpg"}
         alt={"Желудочный баллон"}

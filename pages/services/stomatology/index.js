@@ -1,22 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "../../../db/services";
 import { CallBackSection } from "../../../components/CallBackSection/CallBackSection";
 import { PageMainSection } from "../../../components/PageMainSection/PageMainSection";
 import BreadcrumbsComponent from "../../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 import css from "./StomatologyPage.module.css";
+import { fetchServices } from "../../api/api.js";
 
-export default function StomatologyPage() {
+const StomatologyPage = ({ stomatologyServices }) => {
   const breadcrumbs = [
     { label: "Главная", href: "/" },
     { label: "Услуги", href: "/services" },
     { label: "Стоматология" },
   ];
-
-  const stomatologyServices = services.filter(
-    (service) => service.title === "Стоматология"
-  );
 
   return (
     <div>
@@ -52,7 +48,7 @@ export default function StomatologyPage() {
       />
     </div>
   );
-}
+};
 
 function ServiceCard({ service }) {
   return (
@@ -99,3 +95,26 @@ function LinkCard({ link }) {
     </div>
   );
 }
+
+export async function getStaticProps() {
+  try {
+    const allServices = await fetchServices();
+    const stomatologyServices = allServices.filter(
+      (service) => service.title === "Стоматология"
+    );
+    return {
+      props: {
+        stomatologyServices,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      props: {
+        stomatologyServices: [],
+      },
+    };
+  }
+}
+
+export default StomatologyPage;

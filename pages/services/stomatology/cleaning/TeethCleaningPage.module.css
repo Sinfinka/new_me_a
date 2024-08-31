@@ -1,21 +1,21 @@
-section.gastric {
+section.teethCleaning {
   background: none;
   background-color: var(--background-color-white);
   box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.5);
 }
-h2.gastric,
-label.gastric,
-p.gastric {
+h2.teethCleaning,
+label.teethCleaning,
+p.teethCleaning {
   color: var(--text-blue);
 }
 
-div .inputGastric {
+div .inputTeethCleaning {
   background: rgba(42, 216, 255, 0.18);
   color: var(--text-blue);
 }
 
-.gastricMain {
-  background: url("/gastricMain.jpg"), var(--background-color-white);
+.teethCleaningMain {
+  background: url("/teethCleaningMain.jpg"), var(--background-color-white);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
