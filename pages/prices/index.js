@@ -4,6 +4,8 @@ import { PageMainSection } from "../../components/PageMainSection/PageMainSectio
 import css from "./PricesPage.module.css";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 import PricesTable from "../../components/PricesTable/PricesTable.jsx";
+import { TextCard } from "../../components/TextCard/TextCard.jsx";
+import Image from "next/image.js";
 
 export default function PricesPage({ prices }) {
   const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Цены " }];
@@ -27,6 +29,14 @@ export default function PricesPage({ prices }) {
       </Head>
       <BreadcrumbsComponent paths={breadcrumbs} />
       <PageMainSection additionalClass={css.pricesMain} header={"Цены"} />
+
+      <div className={css.textCardWrapper}>
+        <TextCard
+          header="Важная информация"
+          text="В нашей клинике все цены указаны окончательно, без скрытых и дополнительных платных услуг. В стоимость включены: трансфер, пребывание в клинике, все необходимые анализы и обследования, операция, наркоз (если требуется), все медикаменты и больничное питание. Мы озвучиваем конечную цену, в отличие от других клиник, которые указывают минимальную цену только за саму процедуру, а затем добавляют дополнительные платные услуги."
+        />
+      </div>
+
       <PricesTable categories={categories} prices={prices} />
     </div>
   );
