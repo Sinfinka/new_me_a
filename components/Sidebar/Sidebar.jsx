@@ -6,8 +6,10 @@ import { NavBar } from "../NavBar/NavBar";
 import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
 import Link from "next/link";
 import Icon from "../icons";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = ({ isOpen, onClose, toggleModal }) => {
+  const { t } = useTranslation();
   const sidebarRef = useRef(null);
 
   const handleTouchMove = (e) => {
@@ -58,7 +60,7 @@ const Sidebar = ({ isOpen, onClose, toggleModal }) => {
           <CallMeBlock onClick={toggleModal} isInSidebar />
         </div>
         <div className={css.topBar}>
-          <p>мы обеспечим вам лучший сервис</p>
+          <p>{t("header_top_bar_message")}</p>
         </div>
       </div>
     </div>

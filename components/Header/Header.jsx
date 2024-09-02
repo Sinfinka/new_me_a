@@ -9,10 +9,12 @@ import { CallMeBlock } from "../CallMeBlock/CallMeBlock";
 import Sidebar from "../Sidebar/Sidebar";
 import CallbackModal from "../CallbackModal/CallbackModal";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 import "react-toastify/dist/ReactToastify.css";
 
 function Header() {
+  const { t } = useTranslation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -27,7 +29,7 @@ function Header() {
   const handleSubmit = (values, { setSubmitting }) => {
     console.log("Форма відправлена з хедера", values);
     setSubmitting(false);
-    toast.success("Сообщение отправлено. Вам позвонит консультант.");
+    toast.success(t("form_success_message")); // Використання функції перекладу
     setIsModalOpen(false);
   };
 
@@ -35,7 +37,7 @@ function Header() {
     <>
       <header className={css.header}>
         <div className={css.topBar}>
-          <p>мы обеспечим вам лучший сервис</p>
+          <p>{t("header_top_bar_message")}</p> {/* Переведенный текст */}
         </div>
         <div className={`${css.wrapper} ${con.container}`}>
           <Link href="/">

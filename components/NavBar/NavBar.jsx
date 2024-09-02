@@ -3,9 +3,12 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
 import css from "./NavBar.module.css";
+import { useTranslation } from "react-i18next";
 
 export function NavBar({ onClose, isInSidebar, isInFooter }) {
+  const { t } = useTranslation();
   const pathname = usePathname();
+
   return (
     <nav
       className={clsx({
@@ -22,7 +25,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/"
             onClick={onClose}
           >
-            Главная
+            {t("nav_home")}
           </Link>
         </li>
         <li className={css.li}>
@@ -33,7 +36,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/services"
             onClick={onClose}
           >
-            Услуги
+            {t("nav_services")}
           </Link>
         </li>
         <li className={css.li}>
@@ -44,7 +47,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/prices"
             onClick={onClose}
           >
-            Цены
+            {t("nav_prices")}
           </Link>
         </li>
         <li className={css.li}>
@@ -55,7 +58,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/promotions"
             onClick={onClose}
           >
-            Акции
+            {t("nav_promotions")}
           </Link>
         </li>
         <li className={css.li}>
@@ -66,7 +69,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/articles"
             onClick={onClose}
           >
-            Статьи
+            {t("nav_articles")}
           </Link>
         </li>
         <li className={css.li}>
@@ -77,7 +80,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/about"
             onClick={onClose}
           >
-            О нас
+            {t("nav_about")}
           </Link>
         </li>
         <li className={css.li}>
@@ -88,7 +91,7 @@ export function NavBar({ onClose, isInSidebar, isInFooter }) {
             href="/contacts"
             onClick={onClose}
           >
-            Контакты
+            {t("nav_contacts")}
           </Link>
         </li>
       </ul>

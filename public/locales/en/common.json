@@ -1,6 +1,19 @@
 {
+  "header_top_bar_message": "We will provide you with the best service",
+
+  "nav_home": "Home",
+  "nav_services": "Services",
+  "nav_prices": "Prices",
+  "nav_promotions": "Promotions",
+  "nav_articles": "Articles",
+  "nav_about": "About Us",
+  "nav_contacts": "Contacts",
+
+  "call_me_block_callback_button": "Callback",
+  "call_me_block_work_time": "Mon-Fri: 10 AM - 7 PM",
+
   "hero_section_title_big": "Your Health",
-  "hero_section_title_small_1": "in Reliable",
+  "hero_section_title_small_1": "in Trusted",
   "hero_section_title_small_2": "Hands",
   "call_me_button": "Call Me",
   "form_success_message": "Message sent. A consultant will call you.",
@@ -16,5 +29,16 @@
 
   "promotions_title": "Promotions",
   "promotions_description": "Learn about current promotions and special offers at NewMe Health Clinic. Get favorable conditions on popular medical procedures.",
-  "soon_image_alt": "Promotions coming soon"
+  "soon_image_alt": "Promotions coming soon",
+
+  "callback_modal_title": "Callback",
+  "callback_modal_name_label": "Name",
+  "callback_modal_name_placeholder": "Your name",
+  "callback_modal_phone_label": "Phone",
+  "callback_modal_phone_placeholder": "Your phone",
+  "callback_modal_phone_check": "Check your phone number: ",
+  "callback_modal_submit_button": "Call me",
+  "callback_modal_alternate_form": "You can also fill out the",
+  "callback_modal_form_link_text": "form",
+  "callback_modal_form_description": ", which will allow our specialist to provide you with more detailed consultation."
 }
