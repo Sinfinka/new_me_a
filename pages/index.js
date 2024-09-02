@@ -5,6 +5,15 @@ import { QuestionsSection } from "../components/QuestionsSection/QuestionsSectio
 import { AboutClinicSection } from "../components/AboutClinicSection/AboutClinicSection";
 import { HeroSection } from "../components/HeroSection/HeroSection";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default function Home() {
   return (

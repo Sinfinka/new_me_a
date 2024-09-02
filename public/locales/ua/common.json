@@ -1,4 +1,17 @@
 {
+  "header_top_bar_message": "Ми забезпечимо вам найкращий сервіс",
+
+  "nav_home": "Головна",
+  "nav_services": "Послуги",
+  "nav_prices": "Ціни",
+  "nav_promotions": "Акції",
+  "nav_articles": "Статті",
+  "nav_about": "Про нас",
+  "nav_contacts": "Контакти",
+
+  "call_me_block_callback_button": "Зворотний дзвінок",
+  "call_me_block_work_time": "Пн-Пт: 10-19",
+
   "hero_section_title_big": "Ваше здоров'я",
   "hero_section_title_small_1": "в надійних",
   "hero_section_title_small_2": "руках",
@@ -16,5 +29,16 @@
 
   "promotions_title": "Акції",
   "promotions_description": "Дізнайтеся про актуальні акції та спеціальні пропозиції в NewMe Health Clinic. Отримайте вигідні умови на популярні медичні процедури.",
-  "soon_image_alt": "Акції незабаром"
+  "soon_image_alt": "Акції незабаром",
+
+  "callback_modal_title": "Зворотний дзвінок",
+  "callback_modal_name_label": "Ім'я",
+  "callback_modal_name_placeholder": "Ваше ім'я",
+  "callback_modal_phone_label": "Телефон",
+  "callback_modal_phone_placeholder": "Ваш телефон",
+  "callback_modal_phone_check": "Перевірте Ваш номер телефону: ",
+  "callback_modal_submit_button": "Передзвоніть мені",
+  "callback_modal_alternate_form": "Ви також можете одразу заповнити",
+  "callback_modal_form_link_text": "анкету",
+  "callback_modal_form_description": ", що дозволить нашому спеціалісту надати Вам більш детальну консультацію."
 }
