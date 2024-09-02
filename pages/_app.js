@@ -64,7 +64,7 @@
 // }
 
 // export default App;
-
+import "../i18n";
 import "../styles/global.css";
 import Layout from "../components/Layout/Layout";
 import { useState, useEffect } from "react";
@@ -73,7 +73,6 @@ import Loader from "../components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import Script from "next/script";
 import Head from "next/head";
-import "../i18n";
 import { appWithTranslation } from "next-i18next";
 
 function App({ Component, pageProps }) {

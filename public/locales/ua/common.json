@@ -1,10 +1,20 @@
 {
+  "hero_section_title_big": "Ваше здоров'я",
+  "hero_section_title_small_1": "в надійних",
+  "hero_section_title_small_2": "руках",
+  "call_me_button": "Передзвоніть мені",
+  "form_success_message": "Повідомлення надіслано. Вам зателефонує консультант.",
+
   "home": "Головна",
   "articles": "Статті",
   "articles_title": "Статті",
-  "description": "Читайте наші статті та новини, щоб бути в курсі останніх тенденцій і порад з питань здоров'я від NewMe Health Clinic.",
+  "description": "Читайте наші статті та новини, щоб бути в курсі останніх тенденцій і порад щодо здоров'я від NewMe Health Clinic.",
   "soon_message": "Незабаром тут з'являться цікаві статті!",
   "wait_message": "Поки ви чекаєте, відвідайте наш розділ ",
   "update_message": "щоб дізнатися більше про наші пропозиції.",
-  "services_link": "послуг,"
+  "services_link": "послуги",
+
+  "promotions_title": "Акції",
+  "promotions_description": "Дізнайтеся про актуальні акції та спеціальні пропозиції в NewMe Health Clinic. Отримайте вигідні умови на популярні медичні процедури.",
+  "soon_image_alt": "Акції незабаром"
 }
