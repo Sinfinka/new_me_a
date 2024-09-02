@@ -1,10 +1,20 @@
 {
+  "hero_section_title_big": "Your Health",
+  "hero_section_title_small_1": "in Reliable",
+  "hero_section_title_small_2": "Hands",
+  "call_me_button": "Call Me",
+  "form_success_message": "Message sent. A consultant will call you.",
+
   "home": "Home",
   "articles": "Articles",
   "articles_title": "Articles",
-  "description": "Read our articles and news to stay updated with the latest trends and health tips from NewMe Health Clinic.",
-  "soon_message": "Interesting articles will be here soon!",
-  "wait_message": "While you wait, visit our ",
-  "update_message": "section to learn more about our offerings.",
-  "services_link": "services,"
+  "description": "Read our articles and news to stay up to date with the latest health trends and tips from NewMe Health Clinic.",
+  "soon_message": "Exciting articles coming soon!",
+  "wait_message": "While you wait, check out our ",
+  "update_message": "to learn more about our offers.",
+  "services_link": "services",
+
+  "promotions_title": "Promotions",
+  "promotions_description": "Learn about current promotions and special offers at NewMe Health Clinic. Get favorable conditions on popular medical procedures.",
+  "soon_image_alt": "Promotions coming soon"
 }

@@ -1,4 +1,10 @@
 {
+  "hero_section_title_big": "Ваше здоровье",
+  "hero_section_title_small_1": "в надежных",
+  "hero_section_title_small_2": "руках",
+  "call_me_button": "Позвоните мне",
+  "form_success_message": "Сообщение отправлено. Вам позвонит консультант.",
+
   "home": "Главная",
   "articles": "Статьи",
   "articles_title": "Статьи",
@@ -6,5 +12,9 @@
   "soon_message": "Скоро здесь появятся интересные статьи!",
   "wait_message": "Пока вы ждете, посетите наш раздел ",
   "update_message": "чтобы узнать больше о наших предложениях.",
-  "services_link": "услуг,"
+  "services_link": "услуг",
+
+  "promotions_title": "Акции",
+  "promotions_description": "Узнайте о текущих акциях и специальных предложениях в NewMe Health Clinic. Получите выгодные условия на популярные медицинские процедуры.",
+  "soon_image_alt": "Скоро здесь появятся акции"
 }

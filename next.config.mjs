@@ -1,7 +1,4 @@
 const config = {
-  // images: {
-  //   domains: ["newmealanya.com"],
-  // },
   i18n: {
     locales: ["en", "ru", "ua"], // Поддерживаемые языки
     defaultLocale: "ru", // Язык по умолчанию
