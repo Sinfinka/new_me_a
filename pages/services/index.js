@@ -6,38 +6,41 @@ import { CallBackSection } from "../../components/CallBackSection/CallBackSectio
 import { AchivSection } from "../../components/AchivSection/AchivSection.jsx";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
 import { fetchServices } from "../api/api.js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const ServicesPage = ({ services }) => {
-  console.log(services);
+  const { t } = useTranslation("common");
 
-  const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Услуги" }];
+  const breadcrumbs = [
+    { label: t("home"), href: "/" },
+    { label: t("breadcrumbs_services") },
+  ];
+
   return (
     <>
       <Head>
-        <title>Услуги - Клиника NewMe </title>
-        <meta
-          name="description"
-          content="Клиника NewMe Health предлагает широкий спектр медицинских услуг в области пластической хирургии, бариатрии, стоматологии, пересадки волос и коррекции зрения. Узнайте больше о наших услугах."
-        />
+        <title>{t("services_page_title")}</title>
+        <meta name="description" content={t("services_page_description")} />
         {/* метатеги Open Graph */}
-        <meta property="og:title" content="Услуги - Клиника NewMe" />
+        <meta property="og:title" content={t("services_page_title")} />
         <meta
           property="og:description"
-          content="Клиника NewMe Health предлагает широкий спектр медицинских услуг в области пластической хирургии, бариатрии, стоматологии, пересадки волос и коррекции зрения. Узнайте больше о наших услугах."
+          content={t("services_page_description")}
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://newmealanya.com/services" />
         <meta
           property="og:image"
-          content="https://newmealanya.com/wp-content/uploads/breast-surgery-before-after.jpg" // змінити на актуальне фото
+          content="https://newmealanya.com/wp-content/uploads/breast-surgery-before-after.jpg" // заменить на актуальное фото
         />
 
         {/* метатеги Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Услуги - Клиника NewMe" />
+        <meta name="twitter:title" content={t("services_page_title")} />
         <meta
           name="twitter:description"
-          content="Клиника NewMe Health предлагает широкий спектр медицинских услуг в области пластической хирургии, бариатрии, стоматологии, пересадки волос и коррекции зрения. Узнайте больше о наших услугах."
+          content={t("services_page_description")}
         />
         <meta
           name="twitter:image"
@@ -47,7 +50,10 @@ const ServicesPage = ({ services }) => {
       </Head>
 
       <BreadcrumbsComponent paths={breadcrumbs} />
-      <PageMainSection additionalClass={css.servicesMain} header={"Услуги"} />
+      <PageMainSection
+        additionalClass={css.servicesMain}
+        header={t("services")}
+      />
       <AchivSection />
 
       <section className={css.serviceCard}>
@@ -70,12 +76,13 @@ const ServicesPage = ({ services }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   try {
     const services = await fetchServices();
     return {
       props: {
         services,
+        ...(await serverSideTranslations(locale, ["common"])),
       },
       revalidate: 60,
     };
@@ -83,6 +90,7 @@ export async function getStaticProps() {
     return {
       props: {
         services: [],
+        ...(await serverSideTranslations(locale, ["common"])),
       },
     };
   }

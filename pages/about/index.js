@@ -6,17 +6,19 @@ import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/Breadcru
 import { useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const AboutPage = ({ services }) => {
+  const { t } = useTranslation("common");
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Бажаний порядок
   const desiredOrder = [
-    "Бариатрическая хирургия",
-    "Пластическая хирургия",
-    "Стоматология",
-    "Пересадка волос",
-    "Коррекция зрения",
+    t("bariatric_surgery"),
+    t("plastic_surgery"),
+    t("dentistry"),
+    t("hair_transplant"),
+    t("vision_correction"),
   ];
 
   const sortedServices = services.sort((a, b) => {
@@ -27,74 +29,55 @@ const AboutPage = ({ services }) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "О нас" }];
+  const breadcrumbs = [
+    { label: t("nav_home"), href: "/" },
+    { label: t("nav_about") },
+  ];
 
   return (
     <div>
       <Head>
-        <title>О нас - NewMe Health Clinic</title>
-        <meta
-          name="description"
-          content="NewMe Health Clinic предлагает высококачественные медицинские услуги в сотрудничестве с ведущими больницами и клиниками. Узнайте больше о наших услугах и нашей команде."
-        />
-        {/* метатеги Open Graph */}
-        <meta property="og:title" content="О нас - NewMe Health Clinic" />
-        <meta
-          property="og:description"
-          content="NewMe Health Clinic предлагает высококачественные медицинские услуги в сотрудничестве с ведущими больницами и клиниками. Узнайте больше о наших услугах и нашей команде."
-        />
+        <title>{t("about_page_title")}</title>
+        <meta name="description" content={t("about_page_description")} />
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content={t("about_page_title")} />
+        <meta property="og:description" content={t("about_page_description")} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://newmealanya.com/about" />
         <meta
           property="og:image"
-          content="https://newmealanya.com/wp-content/uploads/about-us-image.jpg" // змініть на актуальне фото
+          content="https://newmealanya.com/wp-content/uploads/about-us-image.jpg" // replace with current photo
         />
 
-        {/* метатеги Twitter */}
+        {/* Twitter meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="О нас - NewMe Health Clinic" />
+        <meta name="twitter:title" content={t("about_page_title")} />
         <meta
           name="twitter:description"
-          content="NewMe Health Clinic предлагает высококачественные медицинские услуги в сотрудничестве с ведущими больницами и клиниками. Узнайте больше о наших услугах и нашей команде."
+          content={t("about_page_description")}
         />
         <meta
           name="twitter:image"
-          content="https://newmealanya.com/wp-content/uploads/about-us-image.jpg" // змініть на актуальне фото
+          content="https://newmealanya.com/wp-content/uploads/about-us-image.jpg" // replace with current photo
         />
         <meta name="twitter:site" content="@NewMeAlanya" />
       </Head>
       <BreadcrumbsComponent paths={breadcrumbs} />
-      {/* Герой-блок */}
+      {/* Hero block */}
       <section className={css.heroSection}>
         <div className={css.heroContent}>
-          <h1>Добро пожаловать в NewMe Health Clinic</h1>
-          <p>Ваш путь к здоровью начинается здесь</p>
+          <h1>{t("hero_title")}</h1>
+          <p>{t("hero_subtitle")}</p>
         </div>
       </section>
 
       <div className={css.aboutContent}>
-        <h1>О нас</h1>
-        <p>
-          В NewMe Health Clinic мы стремимся предоставлять высококачественные
-          медицинские услуги. Наша команда опытных профессионалов гарантирует
-          вам высочайший уровень обслуживания. Мы тесно сотрудничаем с ведущими
-          больницами, клиниками и оздоровительными центрами, чтобы предоставить
-          широкий спектр медицинских процедур и услуг — от плановых осмотров до
-          сложных операций. Наше внимание к вашему медицинскому путешествию не
-          ограничивается медицинскими процедурами — мы организуем вашу поездку,
-          обеспечим комфортное проживание и услуги переводчика.
-        </p>
-        <p>
-          Наша главная цель — сделать ваше медицинское обслуживание максимально
-          комфортным и приятным. Независимо от того, нужна вам медицинская
-          консультация или полный план лечения, мы будем рядом с вами на каждом
-          этапе, чтобы обеспечить ваше полное удовлетворение. Свяжитесь с нами
-          уже сегодня, чтобы узнать больше о наших услугах и том, как мы можем
-          помочь вам.
-        </p>
+        <h1>{t("about_header")}</h1>
+        <p>{t("about_paragraph_1")}</p>
+        <p>{t("about_paragraph_2")}</p>
       </div>
       <section className={css.servicesSection}>
-        <h2>Наши услуги</h2>
+        <h2>{t("our_services")}</h2>
         <ul>
           {sortedServices.map((service, index) => (
             <li key={service.id} className={css.serviceItem}>
@@ -114,7 +97,7 @@ const AboutPage = ({ services }) => {
                       rel="noopener noreferrer"
                       passHref
                     >
-                      Подробнее...
+                      {t("more_details")}
                     </Link>
                   )}
                 </div>
@@ -129,12 +112,13 @@ const AboutPage = ({ services }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   try {
     const services = await fetchServices();
     return {
       props: {
         services,
+        ...(await serverSideTranslations(locale, ["common"])),
       },
       revalidate: 60,
     };
@@ -142,6 +126,7 @@ export async function getStaticProps() {
     return {
       props: {
         services: [],
+        ...(await serverSideTranslations(locale, ["common"])),
       },
     };
   }

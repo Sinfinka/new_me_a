@@ -5,35 +5,74 @@ import css from "./PricesPage.module.css";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 import PricesTable from "../../components/PricesTable/PricesTable.jsx";
 import { TextCard } from "../../components/TextCard/TextCard.jsx";
-import Image from "next/image.js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function PricesPage({ prices }) {
-  const breadcrumbs = [{ label: "Главная", href: "/" }, { label: "Цены " }];
+  const { t } = useTranslation("common");
+
+  const breadcrumbs = [
+    { label: t("nav_home"), href: "/" },
+    { label: t("nav_prices") },
+  ];
 
   const categories = [
-    { key: "plasticSurgery", title: "Пластическая хирургия" },
-    { key: "bariatricSurgery", title: "Бариатрическая хирургия" },
-    { key: "dentistry", title: "Стоматология" },
-    { key: "visionCorrection", title: "Коррекция зрения" },
-    { key: "hairTransplant", title: "Трансплантация волос" },
+    { key: "plasticSurgery", title: t("prices_page_category_plasticSurgery") },
+    {
+      key: "bariatricSurgery",
+      title: t("prices_page_category_bariatricSurgery"),
+    },
+    { key: "dentistry", title: t("prices_page_category_dentistry") },
+    {
+      key: "visionCorrection",
+      title: t("prices_page_category_visionCorrection"),
+    },
+    { key: "hairTransplant", title: t("prices_page_category_hairTransplant") },
   ];
+
   return (
     <div>
       <Head>
-        <title>Цены - NewMe Health Clinic</title>
+        <title>{t("prices_page_title")}</title>
+        <meta name="description" content={t("prices_page_description")} />
+        {/* Open Graph */}
+        <meta property="og:title" content={t("prices_page_title")} />
         <meta
-          name="description"
-          content="Ознакомьтесь с ценами на медицинские услуги в NewMe Health Clinic. Мы предлагаем прозрачные и конкурентоспособные тарифы для различных процедур."
+          property="og:description"
+          content={t("prices_page_description")}
         />
-        {/* ЗМІНИТИ  метатеги Open Graph и Twitter  */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newmealanya.com/prices" />
+        <meta
+          property="og:image"
+          content="https://newmealanya.com/path-to-image.jpg"
+        />{" "}
+        {/* Замените на актуальное фото */}
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t("prices_page_title")} />
+        <meta
+          name="twitter:description"
+          content={t("prices_page_description")}
+        />
+        <meta
+          name="twitter:image"
+          content="https://newmealanya.com/path-to-image.jpg"
+        />{" "}
+        {/* Замените на актуальное фото */}
+        <meta name="twitter:site" content="@NewMeAlanya" />
       </Head>
+
       <BreadcrumbsComponent paths={breadcrumbs} />
-      <PageMainSection additionalClass={css.pricesMain} header={"Цены"} />
+      <PageMainSection
+        additionalClass={css.pricesMain}
+        header={t("nav_prices")}
+      />
 
       <div className={css.textCardWrapper}>
         <TextCard
-          header="Важная информация"
-          text="В нашей клинике все цены указаны окончательно, без скрытых и дополнительных платных услуг. В стоимость включены: трансфер, пребывание в клинике, все необходимые анализы и обследования, операция, наркоз (если требуется), все медикаменты и больничное питание. Мы озвучиваем конечную цену, в отличие от других клиник, которые указывают минимальную цену только за саму процедуру, а затем добавляют дополнительные платные услуги."
+          header={t("prices_page_important_info_header")}
+          text={t("prices_page_important_info_text")}
         />
       </div>
 
@@ -42,13 +81,13 @@ export default function PricesPage({ prices }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   try {
     const prices = await fetchPrices();
-
     return {
       props: {
         prices,
+        ...(await serverSideTranslations(locale, ["common"])),
       },
       revalidate: 60,
     };
@@ -56,6 +95,7 @@ export async function getStaticProps() {
     return {
       props: {
         prices: [],
+        ...(await serverSideTranslations(locale, ["common"])),
       },
     };
   }
