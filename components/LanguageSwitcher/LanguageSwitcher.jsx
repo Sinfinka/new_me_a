@@ -7,8 +7,11 @@ const LanguageSwitcher = ({ isInFooter }) => {
   const { locale, asPath } = router;
 
   const switchToLanguage = (lang) => {
+    // Зберігаємо вибраний мову в Local Storage
+    localStorage.setItem("selectedLanguage", lang);
+
     router.replace(asPath, asPath, { locale: lang });
-    console.log("Switching to language:", lang); // Для проверки
+    console.log("Switching to language:", lang); // Для перевірки
   };
 
   return (

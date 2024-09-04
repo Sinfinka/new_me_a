@@ -48,13 +48,13 @@
 //   );
 // }
 
-import { useTranslation } from "next-i18next";
 import Head from "next/head";
 import Link from "next/link";
 import css from "./PromotionsPage.module.css";
 import { PageMainSection } from "../../components/PageMainSection/PageMainSection";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function PromotionsPage() {
