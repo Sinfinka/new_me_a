@@ -20,7 +20,6 @@ function App({ Component, pageProps }) {
     Router.events.on("routeChangeComplete", handleComplete);
     Router.events.on("routeChangeError", handleComplete);
 
-    // Зчитування вибраної мови з Local Storage
     const storedLanguage = localStorage.getItem("selectedLanguage");
     if (storedLanguage && storedLanguage !== Router.locale) {
       Router.replace(Router.asPath, Router.asPath, { locale: storedLanguage });
