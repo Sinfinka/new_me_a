@@ -6,12 +6,16 @@ import { services } from "../../../db/services.js";
 import { CallBackSection } from "../../../components/CallBackSection/CallBackSection.jsx";
 import Image from "next/image";
 import Link from "next/link.js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function BariatricsPage() {
+  const { t } = useTranslation("common");
+
   const breadcrumbs = [
-    { label: "Главная", href: "/" },
-    { label: "Услуги", href: "/services" },
-    { label: "Бариатрическая хирургия" },
+    { label: t("home"), href: "/" },
+    { label: t("breadcrumbs_services"), href: "/services" },
+    { label: t("bariatric_surgery") },
   ];
 
   const bariatricSurgeryServices = services.filter(
@@ -21,26 +25,21 @@ export default function BariatricsPage() {
   return (
     <div>
       <Head>
-        <title>Бариатрия - NewMe Health Clinic</title>
-        <meta
-          name="description"
-          content="Бариатрическая хирургия в NewMe Health Clinic помогает пациентам достигать здоровья через потерю веса. Узнайте больше о наших услугах и как мы можем помочь вам."
-        />
-        {/* ЗМІНИТИ Open Graph и Twitter */}
+        <title>{t("bariatric_surgery")}</title>
+        <meta name="description" content={t("bariatrics_page_description")} />
       </Head>
 
       <BreadcrumbsComponent paths={breadcrumbs} />
 
       <PageMainSection
         additionalClass={css.plasticMain}
-        header={"Бариатрическая хирургия"}
+        header={t("bariatric_surgery")}
         src={"/plasticMain.jpg"}
-        alt={"Бариатрическая хирургия"}
+        alt={t("bariatrics_page_title")}
       />
+
       <div className={css.servicesContainer}>
-        <h1 className={css.mainHeader}>
-          New Me Health Clinic предоставляет услуги:
-        </h1>
+        <h1 className={css.mainHeader}>{t("bariatrics_services_intro")}</h1>
         {bariatricSurgeryServices.map((service, index) => (
           <ServiceCard key={index} service={service} />
         ))}
@@ -98,4 +97,12 @@ function LinkCard({ link }) {
       </Link>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 }
